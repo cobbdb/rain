@@ -1,0 +1,185 @@
+<?php echo $menus ?>
+
+<div id="page">
+
+<div id="graphic_section">
+    <a  class="warning_link"
+        href="<?php echo $wiki ?>#Warnings"
+        target="_blank">
+        <span class="warning_drop_cap">WARNING:</span>
+        Click here to read the dangers of drinking and collecting rainwater.
+    </a>
+    
+    <div id="mapArea">
+        
+    </div>
+</div>
+
+<div id="output">
+    <a href="<?php echo $wiki ?>" target="_blank">
+        <img src="img/logo.png" alt="Rainwater Collection Calculator" />
+    </a>
+    
+    <div class="output_data">
+        <span class="ul_title">Project Details:</span>
+        <ul>
+            <li>Annual Rainfall: 
+                <span id="out_rain" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#Annual_Rainfall"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Monthly Rainfall: 
+                <a id="rain_graph_link" onclick="changeGraphic('precipitation');" class="graph_link">
+                    (graph)</a>
+                <a href="<?php echo $wiki ?>#Monthly_Rainfall"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Usage Profile: 
+                <a id="use_graph_link" onclick="changeGraphic('consumption');" class="graph_link">
+                    (graph)</a>
+                <a href="<?php echo $wiki ?>#Usage_Profile"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Roof Area: 
+                <span id="out_area" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#Area"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Roof Material: 
+                <span id="out_material" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#Roof_Material"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>System Efficiency: 
+                <span id="out_efficiency" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#System_Efficiency"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Storage Distance: 
+                <span id="out_flush_dist" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#Tank_Distance"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="output_calculations">
+        <span class="ul_title">Calculations:</span>
+        <ul>
+            <li>Annual Collection: 
+                <span id="out_harvest" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#Annual_Collection_Potential"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Tank Size: 
+                <span id="out_tank" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#Minimum_Tank_Size"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Monthly Tank Levels: 
+                <a id="collection_graph_link" onclick="changeGraphic('storage');" class="graph_link">
+                    (graph)</a> <!-- sameline is fix for unlined linebreak -->
+                <a href="<?php echo $wiki ?>#Monthly_Tank_Levels"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Full Tank Weight:
+                <span id="out_weight" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#Full_Tank_Weight"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>Pipe Size: 
+                <a id="downspout_graph_link" onclick="changeGraphic('downspout');" class="graph_link">
+                    (graph)</a> <!-- sameline is fix for unlined linebreak -->
+                <a href="<?php echo $wiki ?>#Pipe_Size"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+            <li>First Flush: 
+                <span id="out_first_flush" class="output_text"></span>
+                <a href="<?php echo $wiki ?>#First_Flush_Size"
+                   target="_blank" class="help_icon help_icon_list">(?)</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="input_section">
+    <h3>Optional Details</h3> 
+    
+    <div class="input_tank">
+        <span class="input_title it_tank">Tank Size (<span class="unit_L"></span>)</span>
+        <br />
+        <input type="text" id="input_tank_box" maxlength="7"
+               onkeypress="return isNumberKey(event);"
+               onkeyup="return newTankSize();"
+               onblur="return ensureTankSize();" />
+        <a href="<?php echo $wiki ?>#Tank_Size"
+           target="_blank" class="help_icon help_icon_tank">(?)</a>
+    </div>
+    
+    <div class="input_storage">
+        <span class="input_title it_dist">Tank Distance (<span class="unit_m"></span>)</span>
+        <br />
+        <input type="text" id="input_storage_box" maxlength="5" value="5"
+               onkeypress="return isNumberKey(event);"
+               onkeyup="return newDistance();" />
+        <a href="<?php echo $wiki ?>#Tank_Distance"
+           target="_blank" class="help_icon help_icon_distance">(?)</a>
+    </div>
+    
+    <div class="input_material">
+        <span class="input_title it_material">Roof Material</span>
+        <br />
+        <select id="input_material_box" onchange="newMaterial();">
+            <option value="1">Perfect</option>
+            <option value="0.95">Tile</option>
+            <option value="0.95">Metal</option>
+            <option value="0.95">Concrete</option>
+            <option value="0.95">Asphalt</option>
+            <option value="0.7">Gravel</option>
+            <option value="0.75">Soil</option>
+            <option value="0.17">Grass</option>
+        </select>
+        <a href="<?php echo $wiki ?>#Roof_Material"
+           target="_blank" class="help_icon help_icon_material">(?)</a>
+    </div>
+    
+    <div class="input_title input_usage_wrapper">
+        <a id="input_usage_autofill" onclick="toggleAutoFill();">
+            (autofill: <span id="autofill_value"></span>)
+        </a>
+        Monthly Water Usage (<span class="unit_L"></span>)
+        <br />
+        <div id="input_usage"></div> <!-- filled via script -->
+        <a href="<?php echo $wiki ?>#Monthly_Water_Usage"
+           target="_blank" class="help_icon help_icon_usage">(?)</a>
+    </div>
+</div>
+
+
+<div class="input_override_wrapper">
+    <div id="input_override">
+        <span class="io_title">
+            Data Adjustments
+        </span>
+        <a id="io_reset" onclick="resetAllValues();" class="io_title_reset">
+            (restore values)</a>
+        <div class="io_rain">
+            <span class="io_rain_title">
+                Rainfall (<span class="unit_mm"></span>)
+            </span>
+            <br />
+            <div id="io_rain_inputs"></div> <!-- filled via script -->
+            <a href="<?php echo $wiki ?>#Rainfall"
+               target="_blank" class="help_icon help_icon_rain">(?)</a>
+        </div>
+        <div class="io_area">
+            <span class="io_area_title">Area (<span class="unit_m2"></span>)</span>
+            <br />
+            <input type="text" id="io_input_area" maxlength="8" value="1000"
+                   onkeypress="return isNumberKey(event);"
+                   onkeyup="return newArea();" />
+            <a href="<?php echo $wiki ?>#Area"
+               target="_blank" class="help_icon help_icon_area">(?)</a>
+        </div>
+    </div>
+</div>

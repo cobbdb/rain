@@ -1,0 +1,241 @@
+#pebrain a {
+    color: white;
+}
+#page {
+	width: 740px;
+	height: 670px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 10px auto 0 auto;
+	cursor: default;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.bkg_credit {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	color: #333;
+	font-family: Georgia, serif;
+	font-size: 12px;
+	cursor: default;
+}
+.bkg_link {
+	color: #555;
+	font-family: Georgia, serif;
+	font-size: 12px;
+	text-decoration: none;
+}
+.bkg_link:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+#output img {
+	border: 0;
+}
+.input_section {
+	position: absolute;
+	width: 470px;
+	height: 112px;
+	top: 500px;
+	left: 0;
+	cursor: default;
+}
+.top_pane {
+	position: absolute;
+	width: 740px;
+	height: 504px;
+	left: 0;
+}
+.output_section {
+	position: absolute;
+	width: 267px;
+	height: 550px;
+	right: 0;
+}
+.warning_drop_cap {
+	color: #CCC;
+}
+.warning_link {
+	color: #ABA;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+}
+.warning_link:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.output_instructions {
+	width: 260px;
+	position: relative;
+	left: 6px;
+	top: -10px;
+	color: #ABA;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	margin-bottom: -10px;
+}
+.output_instructions_drop_cap {
+	color: #CCC;
+	font-weight: bold;
+	font-family: Georgia, serif;
+	font-size: 16px;
+}
+.graphic_section {
+	position: absolute;
+	width: 470px;
+	height: 504px;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+#map_area {
+	left: 2px;
+	margin-top: -16px;
+	width: 469px;
+	height: 504px;
+}
+.map_content {
+	border: 1px solid #666;
+	width: 469px;
+	height: 420px;
+	position: relative;
+	top: 2px;
+	left: 0;
+	z-index: 8000;
+}
+.map_go_panel {
+	position: relative;
+	left: 0;
+	top: 2px;
+}
+.addr_title {
+	color: #CCC;
+	font-family: Georgia, serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+#map_area {
+	position: relative;
+	top: 20px;
+}
+.graph_area {
+	border: 0px solid yellow;
+	position: absolute;
+	height: 426px;
+	width: 469px;
+	left: 2px;
+	bottom: 33px;
+}
+#img_close_graph {
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	cursor: pointer;
+	height: 35px;
+	width: 35px;
+	z-index: 1000;
+}
+.output_calculations {
+	position: relative;
+	top: -16px;
+}
+.ul_title {
+	color: #CCC;
+	font-weight: bold;
+	font-family: Georgia, serif;
+	font-size: 16px;
+	position: relative;
+	left: 6px;
+	margin-top: 5px;
+	cursor: default;
+}
+#output ul {
+	color: #ABA;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	
+	position: relative;
+	top: -12px;
+	cursor: default;
+}
+#output li {
+	margin-bottom: 5px;
+}
+
+.graph_link {
+	color: #BAB;
+	cursor:pointer;
+	font-family: Georgia, serif;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	right: 30px;
+}
+.graph_link:hover {
+	text-decoration: underline;
+}
+.output_text {
+	color: #CCC;
+	font-family: Georgia, serif;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	right: 30px;
+}
+.ot_material {
+	font-size: 12px;
+	height: 18px;
+	position: absolute;
+	right: 30px;
+}
+#background {
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+#background img {
+	width: 100%;
+	height: 100%;
+}
+.b_reset {
+	position: absolute;
+	left: 5px;
+}
+.unit_converter {
+	text-align: center;
+}
+#unit_converter_text {
+	color: #BAB;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+	cursor: pointer;
+}
+#unit_converter_text:hover {
+	text-decoration: underline;
+}
+.intro_link {
+	color: #BAB;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+	cursor: pointer;
+}
+.intro_link:hover {
+	text-decoration: underline;
+}

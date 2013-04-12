@@ -1,0 +1,18 @@
+<div id="inputMenu">
+    <div>
+    <?php
+        $months = Array(
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        );
+        foreach ($months as $month) {
+            echo <<<HTML
+    <div class="month_pair">
+        <span>$month</span>
+        <input id="rain_$month" type="text" value="" />
+    </div>
+HTML;
+        }
+    ?>
+    </div>
+</div>

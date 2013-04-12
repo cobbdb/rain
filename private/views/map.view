@@ -1,0 +1,7 @@
+<div id="mapMenu">
+    <input type="text" placeholder="Address" class="ui-corner-left" />
+    <div id="log"></div>
+    <span id="center" class="ui-corner-right"></span>
+    <span id="clear"></span>
+    <div id="map"></div>
+</div>

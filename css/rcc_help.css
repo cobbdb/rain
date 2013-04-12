@@ -1,0 +1,67 @@
+.help_icon {
+	display: none;
+	color: #BAB;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+	cursor: pointer;
+}
+.help_icon:hover {
+	text-decoration: underline;
+}
+.help_icon_list {
+	position: absolute;
+	right: 8px;
+}
+#output li:hover .help_icon_list {
+	display: inline;
+}
+.help_icon_tank {
+	position: absolute;
+	top: 24px;
+	right: 1px;
+}
+.input_tank:hover .help_icon_tank {
+	display: inline;
+}
+.help_icon_distance {
+	position: absolute;
+	top: 24px;
+	right: 19px;
+}
+.input_storage:hover .help_icon_distance {
+	display: inline;
+}
+.help_icon_material {
+	position: absolute;
+	top: 24px;
+	right: -1px;
+}
+.input_material:hover .help_icon_material {
+	display: inline;
+}
+.help_icon_usage {
+	position: absolute;
+	top: 1px;
+	right: 6px;
+}
+.input_usage_wrapper:hover .help_icon_usage {
+	display: inline;
+}
+.help_icon_rain {
+	position: absolute;
+	top: 4px;
+	right: 229px;
+}
+.io_rain:hover .help_icon_rain {
+	display: inline;
+}
+.help_icon_area {
+	position: absolute;
+	top: 24px;
+	right: -1px;
+}
+.io_area:hover .help_icon_area {
+	display: inline;
+}

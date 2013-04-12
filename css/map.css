@@ -1,0 +1,15 @@
+#map {
+    min-height: 200px;
+    border: 1px solid #AAA;
+    margin-top: 35px;
+}
+#clear {
+    float: right;
+}
+input[type="text"] {
+    min-width: 100px;
+    float: left;
+}
+#center {
+    float: left;
+}

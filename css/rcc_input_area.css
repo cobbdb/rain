@@ -1,0 +1,86 @@
+.input_section h3 {
+	display: none;
+	text-align: center;
+	color: #CCC;
+	font-size: 12px;
+	font-family: Georgia, serif;
+	font-weight: bold;
+	text-decoration: underline;
+	position: relative;
+	top: -10px;
+}
+#input_storage_box {
+	width: 39px;
+	height: 18px;
+}
+#input_tank_box {
+	width: 55px;
+	height: 18px;
+}
+#input_usage {
+	width: 342px;
+}
+.month_pair_usage {
+	height: 38px;
+	float: left;
+	margin-left: 5px;
+	text-align: center;
+	color: #ABA;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+}
+.mp_box_usage {
+	width: 47px;
+	height: 18px;
+}
+.mp_box_usage:disabled {
+	background-color: #999;
+}
+.input_material {
+	width: 115px;
+	position: absolute;
+	right: -263px;
+	top: 57px;
+	text-align: center;
+}
+.input_storage {
+	width: 120px;
+	position: absolute;
+	right: -140px;
+	top: 57px;
+	text-align: center;
+}
+.input_tank {
+	width: 100px;
+	position: absolute;
+	right: -1px;
+	top: 57px;
+	text-align: center;
+}
+.input_title {
+	color: #CCC;
+	font-family: Georgia, serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.input_usage_wrapper {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	text-align: center;
+}
+#input_usage_autofill {
+	position: absolute;
+	left: 5px;
+	top: 2px;
+	color: #BAB;
+	font-family: Arial, Gadget, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+	cursor:pointer;
+}
+#input_usage_autofill:hover {
+	text-decoration: underline;
+}

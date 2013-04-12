@@ -1,0 +1,55 @@
+<!--
+This calculator was made to aid in designing a rainwater catchment
+system and is offered free to the world via pequals.com. Please do not
+replicate this calculator elsewhere but feel free to link directly
+to the calculator's homepage: www.pequals.com/rain
+
+Feel free to use this code as a reference, but do not in any way
+monitize code taken from this project.
+
+Libraries Used:
+ . jQuery (jquery.com)
+ . jQuery UI (jqueryui.com)
+ . Google Maps JavaScript API (code.google.com/apis/maps)
+ . Highcharts (highcharts.com)
+ . ELabel extension (econym.org.uk/gmap/elabel.htm)
+
+Created for ENGR308 at Humboldt State University - Fall 2011
+by Dan Cobb with Mike Despars and Lonny Grafman
+ . Dan Cobb: (cobbdb@gmail.com) (petitgibier.sytes.net)
+ . Lonny Grafman: (lonny@appropedia.org) (www.appropedia.org)
+
+v1.0.0: October 2011
+v2.0.0: November 2012
+-->
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-26042472-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<meta name="google-translate-customization" content="cf6f90d30cac88d-2bda3379a0f9b865-g2522b8edb7d27cab-10" />
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<title>PEquals - Rainwater Collection Calculator</title>
+<meta name="description" content="Your one-stop aid in calculating and designing for commercial and residential rainwater collection systems." />
+<meta name="keywords" content="rainwater,catchment,rain collection,recycle rain,rain storage,monthly rainfall,weather station" />
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCdIZENrPra9esL7GQpBU5kIC-mGtQkUWg&sensor=false"></script>
+<script src="js/map.js"></script>
+<script src="js/init.js"></script>
+
+<link href="css/global.css" rel="stylesheet" />
+<link href="css/map.css" rel="stylesheet" />
