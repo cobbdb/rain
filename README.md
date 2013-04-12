@@ -21,7 +21,7 @@ Libraries Used:
 * [Highcharts](www.highcharts.com)
 * [ELabel Extension](econym.org.uk/gmap/elabel.htm)
 
-Original version created for ENGR308 at Humboldt State University - Fall 2011
+Original version created for ENGR308 at Humboldt State University - Fall 2011  
 _by Dan Cobb with Mike Despars and Lonny Grafman_
 
 * Dan Cobb: cobbdb@gmail.com - [petitgibier.sytes.net](petitgibier.sytes.net)
