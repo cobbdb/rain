@@ -1,7 +1,7 @@
 # Rainwater Collection Calculator
 ### A web tool for rapid feasibily analysis of rainwater collection systems.
 
-* Development Version: **v1.2.0**
+* Development Version: **v1.3.0**
 * Current Release Version: **v1.0.1**
 
 ---
@@ -24,7 +24,7 @@ Libraries Used:
 
 ---
 Original version created for ENGR308 at Humboldt State University - Fall 2011  
-_by Dan Cobb with Mike Despars and Lonny Grafman_
+By Dan Cobb with Mike Despars and Lonny Grafman
 
 * Dan Cobb: cobbdb@gmail.com - [petitgibier.sytes.net](http://petitgibier.sytes.net)
 * Lonny Grafman: lonny@appropedia.org - [appropedia.org](http://www.appropedia.org)
