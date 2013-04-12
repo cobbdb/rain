@@ -1,5 +1,5 @@
 # Rainwater Collection Calculator
-### A web tool for rapid feasibily analysis of rainwater collection system.
+### A web tool for rapid feasibily analysis of rainwater collection systems.
 
 * Development Version: **v1.2.0**
 * Current Release Version: **v1.0.1**
@@ -10,14 +10,14 @@ This calculator was made to aid in designing a rainwater catchment system and is
 
 Feel free to use this code as reference, but do not in any way monitize code taken from this project.
 
-Based on the [Save The Rain WorldBank Tool](http://www.save-the-rain.com/world-bank)
+Based on the [Save The Rain WorldBank Tool](http://www.save-the-rain.com/world-bank).
 
 Libraries Used:
 
 * [jQuery](http://www.jquery.com)
 * [AngularJS](http://angularjs.org/)
 * [Bootstrap](http://twitter.github.io/bootstrap/)
-* [Google Maps JavaScript API](http://code.google.com/apis/maps)
+* [Google Maps JavaScript API](https://developers.google.com/maps/)
 * [Highcharts](http://www.highcharts.com)
 * [ELabel Extension](http://www.econym.org.uk/gmap/elabel.htm)
 
