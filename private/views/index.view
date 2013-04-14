@@ -1,40 +1,36 @@
+<div style="display:none">
 <?php echo $busy ?>
-
-<div id="page">
-
-<div id="banner">
-    Rainwater Collection Calculator
 </div>
 
-<div id="menus">
-    <ul>
-        <li><a href="#mapMenu">
-            <span class="title">Map</span>
-            <span class="ui-icon ui-icon-home"></span>
-        </a></li>
-        <li><a href="#graphsMenu">
-            <span class="title">Graphs</span>
-            <span class="ui-icon ui-icon-image"></span>
-        </a></li>
-        <li><a href="#inputMenu">
-            <span class="title">Input</span>
-            <span class="ui-icon ui-icon-pencil"></span>
-        </a></li>
-        <li><a href="#resultsMenu">
-            <span class="title">Results</span>
-            <span class="ui-icon ui-icon-clipboard"></span>
-        </a></li>
-        <li style="float:right"><a href="#helpMenu">
-            <span class="ui-icon ui-icon-help"></span>
-        </a></li>
-        <li style="float:right"><a href="#optionsMenu">
-            <span class="ui-icon ui-icon-wrench"></span>
-        </a></li>
-    </ul>
-    <?php echo $menus ?>
+<div id="page" class="container" ng-app>
+    <div class="row">
+        <div id="leftRail" class="span3">
+            <h1 class="text-center">Rainwater Collection Calculator</h1>
+            <hr/>
+            <div id="controls" class="">
+                <button type="button" class="btn">
+                    <i class="icon-edit"></i>
+                </button>
+            </div>
+        </div>
+        <div id="contentWell" class="span6">
+            <div class="">
+                <button type="button" class="btn">
+                    <i class="icon-edit"></i>
+                </button>
+            </div>
+        </div>
+        <div id="rightRail" class="span3">
+            <div class="">
+                <button type="button" class="btn">
+                    <i class="icon-edit"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="footer">
+<div id="footer" style="display:none">
     <a href="<?php echo $wiki ?>#Warnings" target="_blank">
         <span>WARNING:</span>
         Click here to read the dangers of drinking and collecting rainwater.

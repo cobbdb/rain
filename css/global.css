@@ -1,21 +1,6 @@
 #pebrain a {
     color: white;
 }
-img {
-    border: none;
-}
-body {
-    background-color: #F6F6F6;
-}
-#page {
-    width: 100%;
-	max-width: 600px;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: 10px auto 3px;
-	cursor: default;
-}
 #footer {
     text-align: center;
 }
@@ -29,9 +14,31 @@ body {
     text-align: center;
     width: 100%;
 }
-a, input {
-    outline: none;
-}
 .ui-tabs .ui-tabs-panel {
     padding: 6px 10px;
+}
+#leftRail h1 {
+    text-shadow: 2px 2px 3px rgba(80, 80, 80, 0.6);
+    font-size: 44px;
+    line-height: 44px;
+    color: #3ca0d0;
+}
+@media (max-width: 979px) and (min-width: 768px) {
+    #leftRail h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+@media (max-width: 767px) {
+    #leftRail h1 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+}
+body {
+    background-color: #f6f6f6;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #AAA;
 }
