@@ -1,44 +1,64 @@
 #pebrain a {
     color: white;
 }
-#footer {
-    text-align: center;
+.bubblegum {
+    font-family: 'Bubblegum Sans';
 }
-#menus li span {
-	display: inline-block;
+.vt323 {
+    font-family: 'VT323';
 }
-#menus .ui-icon {
-    vertical-align: bottom;
+#headerCalc {
+    font-size: 34px;
+    color: #56F23A;
 }
-.panelWide {
-    text-align: center;
-    width: 100%;
+hr {
+    margin: 0;
+    margin-bottom: 5px;
 }
-.ui-tabs .ui-tabs-panel {
-    padding: 6px 10px;
+#header button {
+    margin-top: 7px;
 }
-#leftRail h1 {
-    text-shadow: 2px 2px 3px rgba(80, 80, 80, 0.6);
-    font-size: 44px;
-    line-height: 44px;
-    color: #3ca0d0;
+#header h1 {
+    font-size: 28px;
+    color: #c7e0f0;
+    margin: 0;
 }
-@media (max-width: 979px) and (min-width: 768px) {
-    #leftRail h1 {
-        font-size: 32px;
-        line-height: 32px;
-    }
+#header h1 * {
+    display: inline;
+}
+#header span {
+    font-size: 28px;
+}
+#header img {
+    height: 32px;
+}
+.stroke {
+text-shadow:
+    2px 2px 3px #555,
+    -1px -1px 0 #bbb,  
+    1px -1px 0 #bbb,
+    -1px 1px 0 #bbb,
+    1px 1px 0 #bbb;
 }
 @media (max-width: 767px) {
-    #leftRail h1 {
-        font-size: 28px;
-        line-height: 28px;
+    #header h1 {
+        text-align: center;
+    }
+    #header button {
+        margin: 0;
+    }
+}
+@media (max-width: 480px) {
+    #headerCalc {
+        font-size: 26px;
+    }
+    #header img {
+        height: 26px;
+    }
+    #header h1 {
+        font-size: 22px;
     }
 }
 body {
     background-color: #f6f6f6;
-}
-hr {
-    border: 0;
-    border-top: 1px solid #AAA;
 }

@@ -3,25 +3,37 @@
 </div>
 
 <div id="page" class="container" ng-app>
+    <div id="header" class="row">
+        <div class="span8">
+            <h1 class="stroke bubblegum">
+                <p>Rainwater</p>
+                <p>Collection</p>
+                <img src="img/logo_icon.png"/>
+                <p id="headerCalc" class="vt323">Calculator</p>
+            </h1>
+        </div>
+        <button type="button" class="btn span1 offset3">
+            <i class="icon-align-justify"></i>
+        </button>
+    </div>
+    <hr/>
     <div class="row">
         <div id="leftRail" class="span3">
-            <h1 class="text-center">Rainwater Collection Calculator</h1>
-            <hr/>
-            <div id="controls" class="">
+            <div id="controls" class="well">
                 <button type="button" class="btn">
                     <i class="icon-edit"></i>
                 </button>
             </div>
         </div>
         <div id="contentWell" class="span6">
-            <div class="">
+            <div class="well">
                 <button type="button" class="btn">
                     <i class="icon-edit"></i>
                 </button>
             </div>
         </div>
         <div id="rightRail" class="span3">
-            <div class="">
+            <div class="well">
                 <button type="button" class="btn">
                     <i class="icon-edit"></i>
                 </button>
