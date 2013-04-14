@@ -1,8 +1,6 @@
 # Rainwater Collection Calculator
-### A web tool for rapid feasibily analysis of rainwater collection systems.
-
-* Development Version: **v1.3.0**
-* Current Release Version: **v1.0.1**
+### A web tool for rapid feasibily analysis of rainwater collection systems.  
+Version **v1.3.0**
 
 ---
 This tool is hosted by [PEquals.com](http://www.pequals.com/rain).
