@@ -59,6 +59,12 @@ text-shadow:
         font-size: 22px;
     }
 }
+#controls i {
+    float: right;
+}
+#controls {
+    cursor: pointer;
+}
 body {
     background-color: #f6f6f6;
 }

@@ -19,11 +19,24 @@
     <hr/>
     <div class="row">
         <div id="leftRail" class="span3">
-            <div id="controls" class="well">
-                <button type="button" class="btn">
-                    <i class="icon-edit"></i>
-                </button>
-            </div>
+            <ul id="controls" class="nav nav-list">
+                <li class="active">
+                    <a><i class="icon-chevron-right"></i>
+                    Project Map</a>
+                </li>
+                <li>
+                    <a><i class="icon-chevron-right"></i>
+                    Graph: Monthly Rainfall</a>
+                </li>
+                <li>
+                    <a><i class="icon-chevron-right"></i>
+                    Graph: Usage Profile</a>
+                </li>
+                <li>
+                    <a><i class="icon-chevron-right"></i>
+                    Graph: Downspout Diameter</a>
+                </li>
+            </ul>
         </div>
         <div id="contentWell" class="span6">
             <div class="well">

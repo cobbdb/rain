@@ -1,5 +1,5 @@
 $(function () {
-    $("#busyMenu").dialog({
+    /*$("#busyMenu").dialog({
         autoOpen: false,
         modal: true,
         resizable: false,
@@ -17,13 +17,13 @@ $(function () {
             $("#menus .title").show();
         }
     });
-    $(window).resize();
+    $(window).resize();*/
     
     /**
      * Field prefill browser compatibility fix.
      * @see http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
      */
-    $("[placeholder]").focus(function () {
+    /*$("[placeholder]").focus(function () {
         var input = $(this);
         if (input.val() == input.attr("placeholder")) {
             input.val("");
@@ -43,7 +43,7 @@ $(function () {
                 input.val("");
             }
         })
-    });
+    });*/
     
     
     
