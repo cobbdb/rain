@@ -9,7 +9,7 @@
 }
 #headerCalc {
     font-size: 34px;
-    color: #56F23A;
+    color: #47cf47;
 }
 hr {
     margin: 0;
@@ -35,10 +35,10 @@ hr {
 .stroke {
 text-shadow:
     2px 2px 3px #555,
-    -1px -1px 0 #bbb,  
-    1px -1px 0 #bbb,
-    -1px 1px 0 #bbb,
-    1px 1px 0 #bbb;
+    -1px -1px 0 #888,  
+    1px -1px 0 #888,
+    -1px 1px 0 #888,
+    1px 1px 0 #888;
 }
 @media (max-width: 767px) {
     #header h1 {
