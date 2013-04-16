@@ -7,16 +7,32 @@
 .vt323 {
     font-family: 'VT323';
 }
+.geo {
+    font-family: 'Geo';
+}
+.geostar {
+    font-family: 'Geostar Fill';
+}
 #headerCalc {
     font-size: 34px;
     color: #47cf47;
 }
 hr {
-    margin: 0;
+    margin: 5px;
     margin-bottom: 5px;
 }
 #header button {
     margin-top: 7px;
+    float: right;
+}
+.dropdown {
+    cursor: pointer;
+}
+#contentWell .navbar {
+    margin: -1px -1px 20px -1px;
+}
+#contentWell .well {
+    padding: 0 0 20px 0;
 }
 #header h1 {
     font-size: 28px;
@@ -25,6 +41,7 @@ hr {
 }
 #header h1 * {
     display: inline;
+    vertical-align: middle;
 }
 #header span {
     font-size: 28px;
@@ -47,6 +64,9 @@ text-shadow:
     #header button {
         margin: 0;
     }
+    #contentWell .navbar .dropdown-menu {
+        display: inline-block;
+    }
 }
 @media (max-width: 480px) {
     #headerCalc {
@@ -58,9 +78,14 @@ text-shadow:
     #header h1 {
         font-size: 22px;
     }
+    #header h1 p {
+    }
 }
 #controls i {
     float: right;
+}
+#controls a {
+    padding: 8px 14px;
 }
 #controls {
     cursor: pointer;

@@ -48,7 +48,7 @@ $(function () {
 
 <link src="//normalize-css.googlecode.com/svn/trunk/normalize.css" rel="stylesheet"/>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Bubblegum+Sans|VT323" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Bubblegum+Sans|Geo" rel="stylesheet">
 <link href="css/global.css" rel="stylesheet"/>
 <!--[if IE 7]>
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
