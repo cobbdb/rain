@@ -1,32 +1,34 @@
 <?php
 
-require "../util/Engine.php";
+require "./private/eta.php";
+H::setHome("./private/views/");
+H::setBase("../base.view");
 
 function buildMenuSet($wiki) {
-    $menus = Template::render("./private/views/map.view");
-    $menus .= Template::render("./private/views/graphs.view");
-    $menus .= Template::render("./private/views/results.view");
-    $menus .= Template::render("./private/views/input.view");
-    $menus .= Template::render("./private/views/options.view");
-    $menus .= Template::render("./private/views/help.view", Array(
+    $menus = H::render("map.view");
+    $menus .= H::render("graphs.view");
+    $menus .= H::render("results.view");
+    $menus .= H::render("input.view");
+    $menus .= H::render("options.view");
+    $menus .= H::render("help.view", Array(
         "wiki" => $wiki
     ));
     return $menus;
 }
 
 
-$head = Template::render("./private/views/head.view");
+$head = H::render("head.view");
 
 $wiki = "http://www.appropedia.org/Rainwater_Collection_Calculator";
 $menus = buildMenuSet($wiki);
-$busy = Template::render("./private/views/busy.view");
-$body = Template::render("./private/views/index.view", Array(
+$busy = H::render("busy.view");
+$body = H::render("index.view", Array(
     "menus" => $menus,
     "busy" => $busy,
     "wiki" => $wiki
 ));
 
-echo Template::render(null, Array(
+echo H::render(null, Array(
     "head" => $head,
     "body" => $body
 ));

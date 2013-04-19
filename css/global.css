@@ -22,7 +22,6 @@ hr {
     margin-bottom: 5px;
 }
 #header button {
-    margin-top: 7px;
     float: right;
 }
 .dropdown {
@@ -31,8 +30,14 @@ hr {
 #contentWell .navbar {
     margin: -1px -1px 20px -1px;
 }
+.noRadius, .well {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
 #contentWell .well {
     padding: 0 0 20px 0;
+    background-image: url('http://subtlepatterns.com/patterns/climpek.png');
 }
 #header h1 {
     font-size: 28px;

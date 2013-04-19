@@ -1,47 +1,25 @@
-<div style="display:none">
-<?php echo $busy ?>
-</div>
-
 <div id="page" class="container" ng-app>
     <div id="header" class="row">
         <div class="span8">
             <h1 class="stroke bubblegum">
-                <p>Rainwater</p>
-                <p>Collection</p>
-                <img src="img/logo_icon.png"/><p id="headerCalc" class="geo">Calculator</p>
+                <span>Rainwater</span>
+                <span>Collection</span>
+                <img src="img/logo_icon.png"/><span id="headerCalc" class="geo">Calculator</span>
             </h1>
         </div>
-        <button type="button" class="btn">
+        <button type="button" class="btn navbar-search">
             <i class="icon-align-justify"></i>
         </button>
     </div>
     <hr/>
     <div class="row">
-        <div id="leftRail" class="span3 container">
-            <ul id="controls" class="nav nav-list row">
-                <li class="active">
-                    <a><i class="icon-chevron-right"></i>
-                    Project Map</a>
-                </li>
-                <li>
-                    <a><i class="icon-chevron-right"></i>
-                    Graph: Monthly Rainfall</a>
-                </li>
-                <li>
-                    <a><i class="icon-chevron-right"></i>
-                    Graph: Usage Profile</a>
-                </li>
-                <li>
-                    <a><i class="icon-chevron-right"></i>
-                    Graph: Downspout Diameter</a>
-                </li>
-            </ul>
-            <hr class="row"/>
+        <div id="leftRail" class="span2 container">
+            
         </div>
         <div id="contentWell" class="span6">
             <div class="well">
                 <div class="navbar">
-                    <div class="navbar-inner">
+                    <div class="navbar-inner noRadius">
                         <div class="container">
                             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                                 <span class="icon-bar"></span>
@@ -91,9 +69,10 @@
                         </div>
                     </div>
                 </div>
+                <div id="map"></div>
             </div>
         </div>
-        <div id="rightRail" class="span3">
+        <div id="rightRail" class="span4">
             <div class="well">
                 <button type="button" class="btn">
                     <i class="icon-edit"></i>
@@ -108,6 +87,4 @@
         <span>WARNING:</span>
         Click here to read the dangers of drinking and collecting rainwater.
     </a>
-</div>
-
 </div>
