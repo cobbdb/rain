@@ -20,6 +20,7 @@ Libraries Used:
 * [Google Maps JavaScript API](https://developers.google.com/maps/)
 * [Highcharts](http://www.highcharts.com)
 * [ELabel Extension](http://www.econym.org.uk/gmap/elabel.htm)
+* [Eta](http://www.github.com/cobbdb/eta)
 
 ---
 By Dan Cobb with Lonny Grafman
