@@ -1,7 +1,7 @@
 <div id="page" class="container" ng-app>
     <div id="header" class="row">
         <div class="span12">
-            <h1 class="stroke bubblegum span8">
+            <h1 class="stroke bubblegum">
                 <span>Rainwater</span>
                 <span>Collection</span>
                 <img src="img/logo_icon.png"/><span id="headerCalc" class="geo">Calculator</span>

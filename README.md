@@ -5,11 +5,9 @@ Version **1.3.0**
 ---
 This tool is hosted by [PEquals.com](http://www.pequals.com/rain).
 
-This calculator was made to aid in designing a rainwater catchment system and is offered free to the world via [PEquals.com](http://www.pequals.com/apprount). **Please do not replicate this calculator elsewhere** but feel free to link directly to the calculator's homepage at [pequals.com/rain](http://www.pequals.com/rain).
+This calculator was made to aid in designing a rainwater catchment system and is offered free to the world via [PEquals.com](http://www.pequals.com/rain). **Please do not replicate this calculator elsewhere** but feel free to link directly to the calculator's homepage at [pequals.com/rain](http://www.pequals.com/rain).
 
 **Feel free to use this code as reference, but do not in any way monitize code taken from this project.**
-
-Based on the [Save The Rain WorldBank Tool](http://www.save-the-rain.com/world-bank).
 
 Libraries Used:
 

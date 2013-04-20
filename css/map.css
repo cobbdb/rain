@@ -7,6 +7,6 @@
 }
 @media (max-width: 767px) {
     #map {
-        height: 200px;
+        max-height: 200px;
     }
 }

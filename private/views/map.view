@@ -26,20 +26,24 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a data-title="Map"><i class="icon-map-marker"></i>
+                                <a id="optionMap" data-title="Map" data-target="#map"><i class="icon-map-marker"></i>
                                 Project Map</a>
+                            </li>
+                            <li>
+                                <a id="optionLabel" data-title="Map" data-target="#map"><i class="icon-road"></i>
+                                Map with Labels</a>
                             </li>
                             <li class="nav-header">Graph Types</li>
                             <li>
-                                <a data-title="Rainfall"><i class="icon-tint"></i>
+                                <a id="optionRain" data-title="Rainfall" data-target="#rainGraph"><i class="icon-tint"></i>
                                 Monthly Rainfall</a>
                             </li>
                             <li>
-                                <a data-title="Usage"><i class="icon-refresh"></i>
+                                <a id="optionUsage" data-title="Usage" data-target="#usageGraph"><i class="icon-refresh"></i>
                                 Usage Profile</a>
                             </li>
                             <li>
-                                <a data-title="Downspout"><i class="icon-resize-full"></i>
+                                <a id="optionSpout" data-title="Downspout" data-target="#spoutGraph"><i class="icon-resize-full"></i>
                                 Downspout Diameter</a>
                             </li>
                         </ul>
