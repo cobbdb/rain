@@ -4,7 +4,7 @@ require "./private/eta.php";
 H::setHome("./private/views/");
 H::setBase("../base.view");
 
-function buildMenuSet($wiki) {
+/*function buildMenuSet($wiki) {
     $menus = H::render("map.view");
     $menus .= H::render("graphs.view");
     $menus .= H::render("results.view");
@@ -14,19 +14,15 @@ function buildMenuSet($wiki) {
         "wiki" => $wiki
     ));
     return $menus;
-}
+}*/
 
 
 $head = H::render("head.view");
 
-$wiki = "http://www.appropedia.org/Rainwater_Collection_Calculator";
-$menus = buildMenuSet($wiki);
-$busy = H::render("busy.view");
-$body = H::render("index.view", Array(
-    "menus" => $menus,
-    "busy" => $busy,
-    "wiki" => $wiki
-));
+//$wiki = "http://www.appropedia.org/Rainwater_Collection_Calculator";
+//$menus = buildMenuSet($wiki);
+//$busy = H::render("busy.view");
+$body = H::render("index.view");
 
 echo H::render(null, Array(
     "head" => $head,

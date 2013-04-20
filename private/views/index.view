@@ -1,78 +1,35 @@
 <div id="page" class="container" ng-app>
     <div id="header" class="row">
-        <div class="span8">
-            <h1 class="stroke bubblegum">
+        <div class="span12">
+            <h1 class="stroke bubblegum span8">
                 <span>Rainwater</span>
                 <span>Collection</span>
                 <img src="img/logo_icon.png"/><span id="headerCalc" class="geo">Calculator</span>
             </h1>
         </div>
-        <button type="button" class="btn navbar-search">
-            <i class="icon-align-justify"></i>
-        </button>
     </div>
     <hr/>
     <div class="row">
-        <div id="leftRail" class="span2 container">
-            
-        </div>
-        <div id="contentWell" class="span6">
-            <div class="well">
-                <div class="navbar">
-                    <div class="navbar-inner noRadius">
-                        <div class="container">
-                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </a>
-                            <a class="brand">Map</a>
-                            <div class="nav-collapse collapse">
-                                <ul class="nav">
-                                    <li>
-                                        <div class="input-append navbar-search">
-                                            <input class="span2" id="mapSearch" placeholder="Search Map" type="text">
-                                            <button class="btn" type="button">
-                                                <i class="icon-search"></i>
-                                            </button>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <ul class="nav pull-right">
-                                    <li class="dropdown pull-right">
-                                        <a class="dropdown-toggle hidden-phone" data-toggle="dropdown">
-                                            Options
-                                            <i class="caret"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a data-title="Map"><i class="icon-map-marker"></i>
-                                                Project Map</a>
-                                            </li>
-                                            <li class="nav-header">Graph Types</li>
-                                            <li>
-                                                <a data-title="Rainfall"><i class="icon-tint"></i>
-                                                Monthly Rainfall</a>
-                                            </li>
-                                            <li>
-                                                <a data-title="Usage"><i class="icon-refresh"></i>
-                                                Usage Profile</a>
-                                            </li>
-                                            <li>
-                                                <a data-title="Downspout"><i class="icon-resize-full"></i>
-                                                Downspout Diameter</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="map"></div>
+        <div id="leftRail" class="span1 container">
+            <div class="well well-small">
+                <ul class="nav nav-list">
+                    <li ng-repeat="i in [1,2,3]">
+                        <a>
+                            <i class="icon-th-large"></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a>
+                            <i class="icon-wrench"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div id="rightRail" class="span4">
+        <div id="contentWell" class="span6">
+            <?= H::render("map.view") ?>
+        </div>
+        <div id="rightRail" class="span5">
             <div class="well">
                 <button type="button" class="btn">
                     <i class="icon-edit"></i>

@@ -1,22 +1,3 @@
-#pebrain a {
-    color: white;
-}
-.bubblegum {
-    font-family: 'Bubblegum Sans';
-}
-.vt323 {
-    font-family: 'VT323';
-}
-.geo {
-    font-family: 'Geo';
-}
-.geostar {
-    font-family: 'Geostar Fill';
-}
-#headerCalc {
-    font-size: 34px;
-    color: #47cf47;
-}
 hr {
     margin: 5px;
     margin-bottom: 5px;
@@ -28,16 +9,12 @@ hr {
     cursor: pointer;
 }
 #contentWell .navbar {
-    margin: -1px -1px 20px -1px;
+    margin: -1px -1px 0 -1px;
 }
 .noRadius, .well {
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
-}
-#contentWell .well {
-    padding: 0 0 20px 0;
-    background-image: url('http://subtlepatterns.com/patterns/climpek.png');
 }
 #header h1 {
     font-size: 28px;
@@ -48,19 +25,13 @@ hr {
     display: inline;
     vertical-align: middle;
 }
-#header span {
-    font-size: 28px;
-}
 #header img {
     height: 32px;
 }
-.stroke {
-text-shadow:
-    2px 2px 3px #555,
-    -1px -1px 0 #888,  
-    1px -1px 0 #888,
-    -1px 1px 0 #888,
-    1px 1px 0 #888;
+@media (max-width: 979px) {
+    #contentWell .navbar .dropdown-menu {
+        display: inline-block;
+    }
 }
 @media (max-width: 767px) {
     #header h1 {
@@ -69,31 +40,11 @@ text-shadow:
     #header button {
         margin: 0;
     }
-    #contentWell .navbar .dropdown-menu {
-        display: inline-block;
-    }
 }
 @media (max-width: 480px) {
-    #headerCalc {
-        font-size: 26px;
-    }
     #header img {
         height: 26px;
     }
-    #header h1 {
-        font-size: 22px;
-    }
-    #header h1 p {
-    }
-}
-#controls i {
-    float: right;
-}
-#controls a {
-    padding: 8px 14px;
-}
-#controls {
-    cursor: pointer;
 }
 body {
     background-color: #f6f6f6;

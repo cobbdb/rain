@@ -1,58 +1,20 @@
 $(function () {
-    $(window).resize(function () {
+    /*$(window).resize(function () {
         var old = $("#map").height();
         var body = $(window).height();
         var banner = $("#pebw").height();
         var page = $("#page").outerHeight(true);
         $("#map").height(old + (body - page - banner));
-    });
-    
-    $("#center").button({
-        label: "Center Map",
-        icons: {
-            primary: "ui-icon-search"
-        },
-        text: false
-    }).click(function () {
-        showAddress();
-    }).removeClass("ui-corner-all");
-    
-    $("#clear").button({
-        label: "Reset",
-        text: true,
-        icons: {
-            secondary: "ui-icon-refresh"
-        }
-    }).click(function () {
-        clearMap();
-    });
-    
-    $("#fetch").button({
-        label: "Find Data",
-        icons: {
-            primary: "ui-icon-search"
-        }
-    }).click(function () {
-        callWeather();
-    });
-    
-    $("#mapMenu input").focus(function () {
-        $(this).animate({
-            width: "+200px"
-        });
-    }).blur(function () {
-        $(this).animate({
-            width: "-200px"
-        });
-    }).outerHeight(32);
+    });*/
     
     var map = new google.maps.Map($("#map")[0], {
         draggableCursor: "crosshair",
         draggingCursor: "move",
+        // Initial center is HSU's CCAT building.
         center: new google.maps.LatLng(40.872738, -124.077417),
         zoom: 18,
         tilt: 0,
-        mapTypeId: google.maps.MapTypeId.HYBRID,
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
         disableDoubleClickZoon: true,
         mapTypeControlOptions: {
             mapTypeIds: [
@@ -62,5 +24,25 @@ $(function () {
         },
         streetViewControl: false,
         panControl: false
+    });
+    
+    // Center map at user's location.
+    $.ajax({
+        url: "//www.geoplugin.net/json.gp",
+        dataType: "jsonp",
+        data: {
+            ip: "96.247.225.141"
+        },
+        jsonp: "jsoncallback",
+        success: function (res) {
+            if (res.geoplugin_status == 200) {
+                var lat = res.geoplugin_latitude;
+                var lng = res.geoplugin_longitude;
+                map.setCenter(new google.maps.LatLng(lat, lng));
+            }
+        },
+        error: function (xhr) {
+            console.error(xhr.status + " : " + xhr.statusText);
+        }
     });
 });

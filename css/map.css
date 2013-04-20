@@ -1,15 +1,12 @@
 #map {
     min-height: 200px;
-    border: 1px solid #AAA;
-    margin-top: 35px;
+    height: 400px;
 }
-#clear {
-    float: right;
+#map img {
+    max-width: none;
 }
-input[type="text"] {
-    min-width: 100px;
-    float: left;
-}
-#center {
-    float: left;
+@media (max-width: 767px) {
+    #map {
+        height: 200px;
+    }
 }

@@ -1,0 +1,29 @@
+.stroke {
+text-shadow:
+    2px 2px 3px #555,
+    -1px -1px 0 #888,  
+    1px -1px 0 #888,
+    -1px 1px 0 #888,
+    1px 1px 0 #888;
+}
+.bubblegum {
+    font-family: 'Bubblegum Sans';
+}
+.geo {
+    font-family: 'Geo';
+}
+#pebrain a {
+    color: white;
+}
+#headerCalc {
+    font-size: 34px;
+    color: #47cf47;
+}
+@media (max-width: 480px) {
+    #header h1 {
+        font-size: 22px;
+    }
+    #headerCalc {
+        font-size: 26px;
+    }
+}
