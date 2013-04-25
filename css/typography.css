@@ -15,15 +15,15 @@ text-shadow:
 #pebrain a {
     color: white;
 }
-#headerCalc {
+#header h1 img + span {
     font-size: 34px;
     color: #47cf47;
 }
 @media (max-width: 480px) {
     #header h1 {
-        font-size: 22px;
+        font-size: 20px;
     }
-    #headerCalc {
-        font-size: 26px;
+    #header h1 img + span {
+        font-size: 24px;
     }
 }

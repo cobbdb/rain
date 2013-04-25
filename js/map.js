@@ -34,19 +34,28 @@ $(function () {
     });
     
     // Center map at user's location.
+    var centerError = function (xhr) {
+        var tpl = _.template('Could not center map - <%= status %> : <%= text %>.');
+        console.error(tpl({
+            status: xhr.status,
+            text: xhr.statusText
+        }));
+    };
     $.ajax({
         url: '//www.geoplugin.net/json.gp',
         dataType: 'jsonp',
         jsonp: 'jsoncallback',
-        success: function (res) {
+        success: function (res, status, xhr) {
             if (res.geoplugin_status == 200) {
                 var lat = res.geoplugin_latitude;
                 var lng = res.geoplugin_longitude;
                 map.setCenter(new google.maps.LatLng(lat, lng));
+            } else {
+                centerError(xhr);
             }
         },
         error: function (xhr) {
-            console.error(xhr.status + ' : ' + xhr.statusText);
+            centerError(xhr);
         }
     });
 });

@@ -4,36 +4,45 @@
             <h1 class="stroke bubblegum">
                 <span>Rainwater</span>
                 <span>Collection</span>
-                <img src="img/logo_icon.png"/><span id="headerCalc" class="geo">Calculator</span>
+                <img src="img/logo_icon.png"><span class="geo">Calculator</span>
             </h1>
         </div>
     </div>
-    <hr/>
+    <hr>
     <div class="row">
-        <div id="leftRail" class="span1 container">
+        <div id="" class="span7">
             <div class="well well-small">
-                <ul class="nav nav-list">
-                    <li ng-repeat="i in [1,2,3]">
-                        <a>
-                            <i class="icon-th-large"></i>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a>
-                            <i class="icon-wrench"></i>
-                        </a>
-                    </li>
-                </ul>
+                <h4>Instruction panel.</h4>
+            </div>
+            <div id="mapWell" class="">
+                <?= H::render("map.view") ?>
             </div>
         </div>
-        <div id="contentWell" class="span6">
-            <?= H::render("map.view") ?>
-        </div>
         <div id="rightRail" class="span5">
-            <div class="well">
-                <button type="button" class="btn">
-                    <i class="icon-edit"></i>
-                </button>
+            <div class="row">
+                <div class="span5">
+                    <div class="well well-small">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <button type="button" class="btn" ng-repeat="i in [1,2,3]">
+                                    <i class="icon-th-large"></i>
+                                </button>
+                                <button type="button" class="btn">
+                                    <i class="icon-wrench"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span4">
+                    <div class="well">
+                        <button type="button" class="btn">
+                            <i class="icon-edit"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
