@@ -15,6 +15,7 @@
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 <!-- <script src="js/rain.min.js"></script> -->
 <script src="js/map.js"></script>
+<script src="js/rain_controller.js"></script>
 
 <script>
 var _gaq = _gaq || [];

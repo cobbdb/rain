@@ -1,0 +1,6 @@
+<div id="footer" class="row text-center">
+    <h6>
+        <span class="label label-warning">Warning</span>
+        There are health hazards in <a href="{{approUrl}}#Warnings" target="_blank" rel="nofollow">drinking and collecting rainwater</a>.
+    </h6>
+</div>

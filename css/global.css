@@ -8,7 +8,7 @@ hr {
 .dropdown {
     cursor: pointer;
 }
-#mapWell .navbar {
+#mapWell.navbar {
     margin: -1px -1px 0 -1px;
 }
 .noRadius, .well {
@@ -32,7 +32,7 @@ hr {
     padding: 20px;
 }
 @media (max-width: 979px) {
-    #mapWell .navbar .dropdown-menu {
+    #mapWell.navbar .dropdown-menu {
         display: inline-block;
     }
     div.nav-collapse.in.collapse {

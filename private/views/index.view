@@ -1,12 +1,6 @@
-<div id="page" class="container" ng-app>
-    <div id="header" class="row">
-        <div class="span12">
-            <h1 class="stroke bubblegum text-center">
-                <span>Rainwater</span>
-                <span>Collection</span>
-                <img src="img/logo_icon.png"><span class="geo">Calculator</span>
-            </h1>
-        </div>
+<div id="page" class="container" ng-controller="RainController" ng-app>
+    <div class="row">
+        <?= H::render('header.view') ?>
     </div>
     <hr>
     <div class="row">
@@ -18,18 +12,12 @@
             </ul>
         </div>
         <div class="span6">
-            <div id="mapWell" class="">
-                <?= H::render("map.view") ?>
-            </div>
+            <?= H::render('map.view') ?>
         </div>
         <div id="rightRail" class="span5">
             <div class="row">
                 <div class="span5">
-                    <div id="guide" class="well well-small text-center">
-                        <button class="close" title="Close this help window.">&times;</button>
-                        <h4>Hi! Welcome to the rainwater collection calculator.</h4>
-                        <small>We're still under construction, but be sure to check back soon!</small>
-                    </div>
+                    <?= H::render('guide.view') ?>
                 </div>
             </div>
             <div class="row">
@@ -50,11 +38,7 @@
             </div>
         </div>
     </div>
-</div>
-
-<div id="footer" style="display:none">
-    <a href="<?php echo $wiki ?>#Warnings" target="_blank">
-        <span>WARNING:</span>
-        Click here to read the dangers of drinking and collecting rainwater.
-    </a>
+    <div class="row">
+        <?= H::render('footer.view') ?>
+    </div>
 </div>

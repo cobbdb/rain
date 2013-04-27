@@ -1,4 +1,4 @@
-<div class="navbar">
+<div id="mapWell" class="navbar">
     <div class="navbar-inner noRadius">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
