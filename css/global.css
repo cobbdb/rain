@@ -32,11 +32,14 @@ hr {
     padding: 20px;
 }
 @media (max-width: 979px) {
-    #contentWell .navbar .dropdown-menu {
+    #mapWell .navbar .dropdown-menu {
         display: inline-block;
     }
 }
 @media (max-width: 767px) {
+    #guide {
+        display: none;
+    }
     #header h1 {
         text-align: center;
     }
