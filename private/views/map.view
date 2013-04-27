@@ -33,7 +33,7 @@
                                 <a id="optionLabel" data-title="Map" data-target="#map"><i class="icon-road"></i>
                                 Map with Labels</a>
                             </li>
-                            <li class="nav-header">Graph Types</li>
+                            <li class="divider"></li>
                             <li>
                                 <a id="optionRain" data-title="Rainfall" data-target="#rainGraph"><i class="icon-tint"></i>
                                 Monthly Rainfall</a>

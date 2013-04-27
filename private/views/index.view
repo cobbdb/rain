@@ -1,7 +1,7 @@
 <div id="page" class="container" ng-app>
     <div id="header" class="row">
         <div class="span12">
-            <h1 class="stroke bubblegum">
+            <h1 class="stroke bubblegum text-center">
                 <span>Rainwater</span>
                 <span>Collection</span>
                 <img src="img/logo_icon.png"><span class="geo">Calculator</span>
@@ -13,11 +13,11 @@
         <div class="span1 text-center">
             <ul class="nav nav-list">
                 <li class="active"><a><i class="icon-home"></i></a></li>
-                <li class="active"><a><i class="icon-signal"></i></a></li>
-                <li class="active"><a><i class="icon-wrench"></i></a></li>
+                <li class=""><a><i class="icon-signal"></i></a></li>
+                <li class=""><a><i class="icon-wrench"></i></a></li>
             </ul>
         </div>
-        <div class="span6 text-center">
+        <div class="span6">
             <div id="mapWell" class="">
                 <?= H::render("map.view") ?>
             </div>
@@ -27,6 +27,7 @@
                 <div class="span5">
                     <div id="guide" class="well well-small text-center">
                         <h4>Hi! Welcome to the rainwater collection calculator.</h4>
+                        <small>We're still under construction, but be sure to check back soon!</small>
                     </div>
                 </div>
             </div>
