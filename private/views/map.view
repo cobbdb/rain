@@ -2,9 +2,7 @@
     <div class="navbar-inner noRadius">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar" ng-repeat="i in [1,2,3]"></span>
             </a>
             <a class="brand">Map</a>
             <div class="nav-collapse collapse">
@@ -19,7 +17,7 @@
                     </li>
                 </ul>
                 <ul class="nav pull-right">
-                    <li class="dropdown pull-right">
+                    <li class="dropdown">
                         <a class="dropdown-toggle hidden-phone hidden-tablet" data-toggle="dropdown">
                             Options
                             <i class="caret"></i>

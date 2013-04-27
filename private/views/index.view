@@ -26,6 +26,7 @@
             <div class="row">
                 <div class="span5">
                     <div id="guide" class="well well-small text-center">
+                        <button class="close" title="Close this help window.">&times;</button>
                         <h4>Hi! Welcome to the rainwater collection calculator.</h4>
                         <small>We're still under construction, but be sure to check back soon!</small>
                     </div>

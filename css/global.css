@@ -35,6 +35,9 @@ hr {
     #mapWell .navbar .dropdown-menu {
         display: inline-block;
     }
+    div.nav-collapse.in.collapse {
+        text-align: center;
+    }
 }
 @media (max-width: 767px) {
     #guide {
