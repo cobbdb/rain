@@ -4,11 +4,13 @@ var MapController = function ($scope) {
     // Bind map init.
     $(function () {
         // Ensure map's height fills the window.
-        $(window).resize(function () {
+        // TODO: This should be done by CSS!
+        /*$(window).resize(function () {
             var top = $('#map').offset().top;
-            var footer = $('#footer').offset().top;
-            $('#map').height(footer - top);
-        }).resize();
+            var total = $(window).height();
+            var footer = $('#footer').height();
+            $('#map').height(total - top - footer);
+        }).resize();*/
         
         $('#mapWell .dropdown ul a').click(function (e) {
             var title = $(this).attr('data-title');
