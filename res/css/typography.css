@@ -15,9 +15,29 @@ text-shadow:
 #pebrain a {
     color: white;
 }
+#header h1 {
+    color: #c7e0f0;
+    font-size: 40px;
+}
 #header h1 img + span {
-    font-size: 34px;
     color: #47cf47;
+    font-size: 42px;
+}
+@media (max-width: 979px) {
+    #header h1 {
+        font-size: 32px;
+    }
+    #header h1 img + span {
+        font-size: 34px;
+    }
+}
+@media (max-width: 768px) {
+    #header h1 {
+        font-size: 30px;
+    }
+    #header h1 img + span {
+        font-size: 32px;
+    }
 }
 @media (max-width: 480px) {
     #header h1 {

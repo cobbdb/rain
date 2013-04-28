@@ -1,5 +1,5 @@
 <div id="guide" class="well well-small text-center">
-    <button class="close" title="Close this help window." data-dismiss="#guide">&times;</button>
+    <button class="close" title="Close this help window." data-dismiss="#guide" ng-click="dismiss($event)">&times;</button>
     <h4>Hi! Welcome to the rainwater collection calculator.</h4>
     <small>We're still under construction, but be sure to check back soon!</small>
 </div>

@@ -1,0 +1,22 @@
+#mapWell .navbar {
+    margin: -1px -1px 0 -1px;
+}
+#map {
+    min-height: 200px;
+}
+#map img {
+    max-width: none;
+}
+@media (max-width: 767px) {
+    #map {
+        max-height: 200px;
+    }
+}
+@media (max-width: 979px) {
+    #mapWell .navbar .dropdown-menu {
+        display: inline-block;
+    }
+    div.nav-collapse.in.collapse {
+        text-align: center;
+    }
+}

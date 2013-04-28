@@ -1,4 +1,4 @@
-<div id="mapWell" class="navbar">
+<div class="navbar" ng-controller="MapController">
     <div class="navbar-inner noRadius">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -24,24 +24,24 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a id="optionMap" data-title="Map" data-target="#map"><i class="icon-map-marker"></i>
+                                <a data-title="Map" data-target="#map" ng-click="showSatellite()"><i class="icon-map-marker"></i>
                                 Project Map</a>
                             </li>
                             <li>
-                                <a id="optionLabel" data-title="Map" data-target="#map"><i class="icon-road"></i>
+                                <a data-title="Map" data-target="#map" ng-click="showHybrid()"><i class="icon-road"></i>
                                 Map with Labels</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a id="optionRain" data-title="Rainfall" data-target="#rainGraph"><i class="icon-tint"></i>
+                                <a data-title="Rainfall" data-target="#rainGraph" ng-click="showRainfall()"><i class="icon-tint"></i>
                                 Monthly Rainfall</a>
                             </li>
                             <li>
-                                <a id="optionUsage" data-title="Usage" data-target="#usageGraph"><i class="icon-refresh"></i>
+                                <a data-title="Usage" data-target="#usageGraph" ng-click="showUsage()"><i class="icon-refresh"></i>
                                 Usage Profile</a>
                             </li>
                             <li>
-                                <a id="optionSpout" data-title="Downspout" data-target="#spoutGraph"><i class="icon-resize-full"></i>
+                                <a data-title="Downspout" data-target="#spoutGraph" ng-click="showDownspout()"><i class="icon-resize-full"></i>
                                 Downspout Diameter</a>
                             </li>
                         </ul>
@@ -52,3 +52,6 @@
     </div>
 </div>
 <div id="map"></div>
+<div id="graph">
+    <h5>This is where cool graphs will someday live.</h5>
+</div>

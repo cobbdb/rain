@@ -1,0 +1,26 @@
+#header button {
+    float: right;
+}
+#header h1 {
+    margin: 0;
+}
+#header h1 * {
+    display: inline;
+    vertical-align: middle;
+}
+#header img {
+    height: 32px;
+}
+@media (max-width: 767px) {
+    #header h1 {
+        text-align: center;
+    }
+    #header button {
+        margin: 0;
+    }
+}
+@media (max-width: 480px) {
+    #header img {
+        height: 26px;
+    }
+}

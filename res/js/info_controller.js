@@ -1,0 +1,2 @@
+var InfoController = function ($scope) {
+};

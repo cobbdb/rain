@@ -1,7 +1,7 @@
-<div id="header">
+<div id="header" class="span12">
     <h1 class="stroke bubblegum text-center">
         <span>Rainwater</span>
         <span>Collection</span>
-        <img src="img/logo_icon.png"><span class="geo">Calculator</span>
+        <img src="res/img/logo_icon.png"><span class="geo">Calculator</span>
     </h1>
 </div>
