@@ -1,11 +1,11 @@
 <div class="navbar" ng-controller="InfoController">
-    <div class="navbar-inner noRadius">
+    <div class="navbar-inner noradius">
         <div class="container">
             <a class="brand">Project Info.</a>
             <ul class="nav pull-right">
-                <button type="button" class="btn" ng-click="openOptions()">
+                <a href="#optionsMenu" type="button" class="btn" data-toggle="modal">
                     <i class="icon-wrench"></i>
-                </button>
+                </a>
             </ul>
         </div>
     </div>
@@ -13,18 +13,12 @@
 <div>
     <div class="row">
         <div class="span3">
-            Cool stuff.
         </div>
         <div class="span3">
-            Other stuff.
         </div>
     </div>
     <div class="row">
-        <div class="span3">
-            Cool stuff.
-        </div>
-        <div class="span3">
-            Other stuff.
+        <div class="span4 offset1">
         </div>
     </div>
 </div>

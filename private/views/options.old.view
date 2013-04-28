@@ -1,0 +1,7 @@
+<div id="optionsMenu">
+    <div id="google_translate_element"></div>
+    
+    <span onclick="toggleGlobalUnit();">
+        (units: <span id="unit_setting"></span>)
+    </span>
+</div>

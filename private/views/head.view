@@ -19,6 +19,9 @@
 <script src="res/js/rain_controller.js"></script>
 <script src="res/js/info_controller.js"></script>
 
+<script src="res/placeholder.min.js"></script>
+<script src="res/js/devText.js"></script>
+
 <script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-26042472-1']);

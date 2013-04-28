@@ -1,22 +1,24 @@
 var MapController = function ($scope) {
     var map;
     
+    $('#map').on('devTextDone', function () {
+        // template for signals
+        // http://api.jquery.com/trigger/
+    });
+    
     // Bind map init.
     $(function () {
-        // Ensure map's height fills the window.
-        // TODO: This should be done by CSS!
-        /*$(window).resize(function () {
-            var top = $('#map').offset().top;
-            var total = $(window).height();
-            var footer = $('#footer').height();
-            $('#map').height(total - top - footer);
-        }).resize();*/
+        // Map height should match info height.
+        var height = $('#rightRail div:nth-child(2)').height();
+        $('#map').height(height);
         
+        // Rebrand map well per option.
         $('#mapWell .dropdown ul a').click(function (e) {
             var title = $(this).attr('data-title');
             $('#mapWell .brand').text(title);
         });
         
+        // Create the google map.
         map = new google.maps.Map($('#map')[0], {
             draggableCursor: 'crosshair',
             draggingCursor: 'move',
@@ -32,31 +34,25 @@ var MapController = function ($scope) {
         });
         
         // Center map at user's location.
-        var centerError = function (xhr) {
-            var tpl = _.template('Could not center map - <%= status %> : <%= text %>.');
-            console.error(tpl({
-                status: xhr.status,
-                text: xhr.statusText
-            }));
-        };
         $.ajax({
             url: '//www.geoplugin.net/json.gp',
             dataType: 'jsonp',
             jsonp: 'jsoncallback',
-            success: function (res, status, xhr) {
-                if (res.geoplugin_status == 200) {
-                    var lat = res.geoplugin_latitude;
-                    var lng = res.geoplugin_longitude;
-                    map.setCenter(new google.maps.LatLng(lat, lng));
-                } else {
-                    centerError(xhr);
-                }
+            success: function (res) {
+                var lat = res.geoplugin_latitude;
+                var lng = res.geoplugin_longitude;
+                map.setCenter(new google.maps.LatLng(lat, lng));
             },
             error: function (xhr) {
-                centerError(xhr);
+                var tpl = _.template('Could not center map - <%= status %> : <%= text %>.');
+                console.error(tpl({
+                    status: xhr.status,
+                    text: xhr.statusText
+                }));
             }
         });
         
+        // Map is default layer.
         displayMap();
     });
     
@@ -72,11 +68,16 @@ var MapController = function ($scope) {
         $('#map').hide();
     };
     
+    /**
+     * TODO: All these show* methods should be handled by signals.
+     */
+    
     $scope.showHybrid = function () {
         map.setOptions({
             mapTypeId: google.maps.MapTypeId.HYBRID
         });
         displayMap();
+        // Close map options menu per click on mobile devices.
         $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
