@@ -1,3 +1,8 @@
 #guide {
     margin-bottom: 5px;
 }
+@media (max-width: 767px) {
+    #guide {
+        display: none;
+    }
+}

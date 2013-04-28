@@ -6,9 +6,8 @@ var MapController = function ($scope) {
         // Ensure map's height fills the window.
         $(window).resize(function () {
             var top = $('#map').offset().top;
-            var total = $(window).height();
-            var footer = $('#footer').height();
-            $('#map').height(total - top - footer);
+            var footer = $('#footer').offset().top;
+            $('#map').height(footer - top);
         }).resize();
         
         $('#mapWell .dropdown ul a').click(function (e) {
@@ -76,6 +75,7 @@ var MapController = function ($scope) {
             mapTypeId: google.maps.MapTypeId.HYBRID
         });
         displayMap();
+        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
     $scope.showSatellite = function () {
@@ -83,17 +83,21 @@ var MapController = function ($scope) {
             mapTypeId: google.maps.MapTypeId.SATELLITE
         });
         displayMap();
+        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
     $scope.showRainfall = function () {
         displayGraph();
+        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
     $scope.showUsage = function () {
         displayGraph();
+        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
     $scope.showDownspout = function () {
         displayGraph();
+        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
 };

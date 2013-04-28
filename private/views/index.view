@@ -20,7 +20,5 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <?= H::render('footer.view') ?>
-    </div>
+    <?= H::render('footer.view') ?>
 </div>
