@@ -52,7 +52,6 @@
         </div>
     </div>
 </div>
-<div id="map"></div>
 <div id="graph">
     <p></p>
 </div>

@@ -3,17 +3,20 @@
         <?= H::render('header.view') ?>
     </div>
     <hr>
-    <div class="row">
-        <div class="span12">
-            <?= H::render('guide.view') ?>
+    <div>
+        <div id="map"></div>
+        <div class="row">
+            <div class="span12">
+                <?= H::render('guide.view') ?>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div id="mapWell" class="span6">
-            <?= H::render('map.view') ?>
-        </div>
-        <div id="rightRail" class="span6">
-            <?= H::render('info.view') ?>
+        <div class="row">
+            <div id="mapWell" class="span6">
+                <?= H::render('map.view') ?>
+            </div>
+            <div id="rightRail" class="span6">
+                <?= H::render('info.view') ?>
+            </div>
         </div>
     </div>
     <?= H::render('footer.view') ?>
