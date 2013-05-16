@@ -1,6 +1,6 @@
 # Rainwater Collection Calculator
 ### A web tool for rapid feasibily analysis of rainwater collection systems.  
-Version **1.3.0**
+Version **2.1.0**
 
 ---
 This tool is hosted by [PEquals.com](http://www.pequals.com/rain).
@@ -19,6 +19,7 @@ Libraries Used:
 * [Highcharts](http://www.highcharts.com)
 * [ELabel Extension](http://www.econym.org.uk/gmap/elabel.htm)
 * [Eta](http://www.github.com/cobbdb/eta)
+* [Grunt](http://gruntjs.com/)
 
 ---
 By Dan Cobb with Lonny Grafman
