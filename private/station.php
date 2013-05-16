@@ -1,15 +1,11 @@
 <?php
 
 /**
- * station.php
- *
  * Stations may contain data points from many years of
  * rainfall measurements. Not all years have rainfall data
  * for every month.
  * TODO: throw exception instead of silent return of error codes.
  * TODO: Desperately needs static class Month with enums.
- * @author Dan Cobb
- * @since 1.3.0
  */
 class Station {
     public $station_id, $lat, $lng, $dist;

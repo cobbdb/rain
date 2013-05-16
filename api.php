@@ -1,15 +1,11 @@
 <?php
 
 require_once "./private/station.php";
+require_once "./private/station_factory.php";
 
 /**
  * Rain data API for Apprount.
- * 
- * @author Dan Cobb
- * @since 1.3.0
- * @date September 18, 2012
  */
-
 
 global $in_lat, $in_lng;
 $in_lat = $_REQUEST["lat"];
@@ -34,7 +30,6 @@ echo $encoded;
 file_close();
 
 
-
 /**
  * Create the JSON object from the nearest station.
  * @returns the encoded JSON object.
@@ -54,7 +49,6 @@ function create_json($s_near) {
     
     return json_encode($json);
 }
-
 
 /**
  * Load average precipitation data into the nearest station.
@@ -92,7 +86,6 @@ function loadAverages(&$s_near) {
     } while ($line !== false); // not identical
 }
 
-
 /**
  * Get the next line of data for s_id.
  * @param s_id Station's id.
@@ -117,7 +110,6 @@ function nextDataLine($s_id) {
     
     return $line;
 }
-
 
 /**
  * Advance the file reader to the start of the station's
@@ -147,7 +139,6 @@ function scanToStation($s_id) {
     return $line;
 }
 
-
 /**
  * Search the meta file for a nearby station id.
  */
@@ -172,7 +163,6 @@ function getNearestStationID() {
     return $s_near;
 }
 
-
 /**
  * Check if station is closer to coords.
  * @param near_dist Updated to new value if closer.
@@ -189,76 +179,16 @@ function isNearest(&$near_dist, $s_check) {
     return $near;
 }
 
-
-/**
- * @returns Distance in miles.
- * @see http://www.johndcook.com/python_longitude_latitude.html
- */
-function findDistance($lat1, $lng1, $lat2, $lng2) {
-    $deg2rad = pi() / 180;
-    
-    $phi1 = (90 - $lat1) * $deg2rad;
-    $phi2 = (90 - $lat2) * $deg2rad;
-    
-    $theta1 = $lng1 * $deg2rad;
-    $theta2 = $lng2 * $deg2rad;
-    
-    $cos = (
-        sin($phi1) * sin($phi2) * cos($theta1 - $theta2) +
-        cos($phi1) * cos($phi2)
-    );
-    $arc = acos($cos);
-    return $arc * 6373; // dist in km
-}
-
-
 /**
  * Parse a meta line for the station id and coords.
- * @param station_id
- * @param lat
- * @param lng
- * @returns the next station of type Station.
+ * @returns {Station}
  */
 function getNextStation() {
     // load next line
     global $fin_meta;
     $line = fgets($fin_meta);
-    
-    // station id
-    $station_id = strtok($line, " \n");
-    
-    // skip to coords
-    /**
-     * Must check four at a time since city info
-     * is completely unpredictable. The only certainty
-     * is that there will be three numbers at the end
-     * of each line.
-     */
-    $one = strtok(" \n");
-    $two = strtok(" \n");
-    $thr = strtok(" \n");
-    $fou = strtok(" \n");
-    while ($fou !== false) {
-        // not identical
-        // shift values down the line
-        $one = $two;
-        $two = $thr;
-        $thr = $fou;
-        $fou = strtok(" \n");
-    }
-    
-    $lat = $one;
-    $lng = $two;
-    
-    // find distance to coords
-    global $in_lat, $in_lng;
-    $dist = findDistance($in_lat, $in_lng, $lat, $lng);
-    // only need 2 digits
-    $dist = round($dist, 2);
-    
-    return new Station($station_id, $lat, $lng, $dist);
+    return StationFactory::newStation($line);
 }
-
 
 /**
  * Open and create file streams.
@@ -269,7 +199,6 @@ function file_init() {
     $fin_precip = fopen("v2.prcp", 'r');
     $fin_meta = fopen("v2.prcp.inv", 'r');
 }
-
 
 /**
  * Close file streams.

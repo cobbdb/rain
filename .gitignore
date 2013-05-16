@@ -1,2 +1,2 @@
-# Ignore all files/directories..
+# Ignore node modules since they can be npm install'd
 node_modules
