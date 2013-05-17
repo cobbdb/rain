@@ -2,7 +2,7 @@
     float: right;
 }
 #header h1 {
-    margin: 0;
+    margin: 5px;
 }
 #header h1 * {
     display: inline;

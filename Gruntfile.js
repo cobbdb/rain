@@ -20,21 +20,6 @@ module.exports = function (grunt) {
                 src: ['./res/js/*.js'],
                 dest: './res/rain.min.js'
             }
-        },
-        concat: {
-            options: {
-                separator: ';',
-                stripBanners: true
-            },
-            default: {
-                src: ['./res/js/*.js'],
-                dest: 'concat.js.temp'
-            }
-        },
-        clean: {
-            default: {
-                src: ['*.temp']
-            }
         }
     });
 

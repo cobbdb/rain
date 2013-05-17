@@ -2,7 +2,6 @@
     <div class="row">
         <?= H::render('header.view') ?>
     </div>
-    <hr>
     <div class="row">
         <div class="span12">
             <?= H::render('guide.view') ?>

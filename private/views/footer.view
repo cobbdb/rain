@@ -1,4 +1,8 @@
 <div id="footer" class="text-center navbar navbar-fixed-bottom">
+    <div class="alert alert-info">
+        <strong>Heads up!</strong>
+        This is some other type of alert.
+    </div>
     <div class="alert">
         <strong>Warning!</strong>
         There are health hazards with <a href="{{approUrl}}#Warnings" target="_blank" rel="nofollow">drinking and collecting rainwater</a>.
