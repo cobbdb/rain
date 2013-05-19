@@ -1,6 +1,5 @@
 $(function () {
-    $('#rightRail div.row div').placeholder();
+    $('.accordion-inner').placeholder();
     $('#optionsMenu .modal-body').placeholder();
     $('#graph p').placeholder();
-    $('#map').trigger('devTextDone');
 });

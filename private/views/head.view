@@ -49,6 +49,5 @@ function googleTranslateElementInit() {
 <link href="res/css/map.css" rel="stylesheet">
 <link href="res/css/footer.css" rel="stylesheet">
 <link href="res/css/typography.css" rel="stylesheet">
-<link href="res/css/guide.css" rel="stylesheet">
 <link href="res/css/header.css" rel="stylesheet">
 <link href="res/css/info.css" rel="stylesheet">

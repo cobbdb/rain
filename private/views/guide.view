@@ -1,4 +1,0 @@
-<div id="guide" class="well well-small text-center">
-    <button class="close" data-dismiss="#guide" ng-click="dismiss($event)">&times;</button>
-    <h4>We're still under construction, but be sure to check back soon!</h4>
-</div>

@@ -1,23 +1,18 @@
 var MapController = function ($scope) {
     var map;
     
-    $('#map').on('devTextDone', function () {
-        // template for signals
-        // http://api.jquery.com/trigger/
-    });
-    
     // Bind map init.
     $(function () {
         // Map height should match info height.
-        var height = $('#rightRail div:nth-child(2)').height();
+        var height = $('#infoWell div:nth-child(2)').height();
         $('#map').height(height);
         
-        // Rebrand map well per option.
-        $('#mapWell .dropdown ul a').click(function (e) {
-            var title = $(this).attr('data-title');
-            $('#mapWell .brand').text(title);
+        // Map options activate when clicked.
+        $('#mapWell .btn-group .btn').click(function (e) {
+            $('#mapWell .btn-group .btn').removeClass('active');
+            $(e.target).addClass('active');
         });
-        
+
         // Create the google map.
         map = new google.maps.Map($('#map')[0], {
             draggableCursor: 'crosshair',
@@ -28,7 +23,13 @@ var MapController = function ($scope) {
             tilt: 0,
             mapTypeId: google.maps.MapTypeId.SATELLITE,
             disableDoubleClickZoon: true,
-            mapTypeControl: false,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                mapTypeIds: [
+                    google.maps.MapTypeId.SATELLITE,
+                    google.maps.MapTypeId.HYBRID
+                ]
+            },
             streetViewControl: false,
             panControl: false
         });
@@ -68,39 +69,19 @@ var MapController = function ($scope) {
         $('#map').hide();
     };
     
-    /**
-     * TODO: All these show* methods should be handled by signals.
-     */
-    
-    $scope.showHybrid = function () {
-        map.setOptions({
-            mapTypeId: google.maps.MapTypeId.HYBRID
-        });
-        displayMap();
-        // Close map options menu per click on mobile devices.
-        $('#mapWell a[data-toggle="collapse"]:visible').click();
-    };
-    
     $scope.showSatellite = function () {
-        map.setOptions({
-            mapTypeId: google.maps.MapTypeId.SATELLITE
-        });
         displayMap();
-        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
     $scope.showRainfall = function () {
         displayGraph();
-        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
     $scope.showUsage = function () {
         displayGraph();
-        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
     
     $scope.showDownspout = function () {
         displayGraph();
-        $('#mapWell a[data-toggle="collapse"]:visible').click();
     };
 };

@@ -1,3 +1,7 @@
-#rightRail .navbar {
+#infoWell .navbar {
     margin-bottom: 10px;
+}
+#infoWell div.well h4 {
+    margin: 0;
+    text-align: center;
 }

@@ -1,24 +1,41 @@
-<div class="navbar" ng-controller="InfoController">
-    <div class="navbar-inner noradius">
-        <div class="container">
-            <a class="brand">Project Info.</a>
-            <ul class="nav pull-right">
-                <button type="button" class="btn" data-toggle="modal" data-target="#optionsMenu">
-                    <i class="icon-wrench"></i>
-                </button>
-            </ul>
+<div class="accordion" id="infoAccordion">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <span class="accordion-toggle" data-toggle="collapse" data-parent="#infoAccordion" href="#collapseRain">
+                <i class="icon-tint"></i>
+                <span>Rainwater</span>
+                <i class="icon-chevron-down pull-right"></i>
+            </span>
+        </div>
+        <div id="collapseRain" class="accordion-body collapse in">
+            <div class="accordion-inner">
+            </div>
         </div>
     </div>
-</div>
-<div>
-    <div class="row">
-        <div class="span3">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <span class="accordion-toggle" data-toggle="collapse" data-parent="#infoAccordion" href="#collapseTank">
+                <i class="icon-folder-close"></i>
+                <span>Tank</span>
+                <i class="icon-chevron-down pull-right"></i>
+            </span>
         </div>
-        <div class="span3">
+        <div id="collapseTank" class="accordion-body collapse">
+            <div class="accordion-inner">
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="span4 offset1">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <span class="accordion-toggle" data-toggle="collapse" data-parent="#infoAccordion" href="#collapseSystem">
+                <i class="icon-retweet"></i>
+                <span>System</span>
+                <i class="icon-chevron-down pull-right"></i>
+            </span>
+        </div>
+        <div id="collapseSystem" class="accordion-body collapse">
+            <div class="accordion-inner">
+            </div>
         </div>
     </div>
 </div>

@@ -1,57 +1,31 @@
-<div class="navbar" ng-controller="MapController">
-    <div class="navbar-inner noradius">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar" ng-repeat="i in [1,2,3]"></span>
-            </a>
-            <span class="brand">Map</span>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li>
-                        <div class="input-append navbar-search">
-                            <input class="span2" id="mapSearch" placeholder="Search Map" type="text">
-                            <button class="btn" type="button">
-                                <i class="icon-search"></i>
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle hidden-phone hidden-tablet" data-toggle="dropdown">
-                            Options
-                            <i class="caret"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- TODO: Convert these to signals instead of declaritive. -->
-                            <li>
-                                <a data-title="Map" data-target="#map" ng-click="showSatellite()"><i class="icon-map-marker"></i>
-                                Project Map</a>
-                            </li>
-                            <li>
-                                <a data-title="Map" data-target="#map" ng-click="showHybrid()"><i class="icon-road"></i>
-                                Map with Labels</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a data-title="Rainfall" data-target="#rainGraph" ng-click="showRainfall()"><i class="icon-tint"></i>
-                                Monthly Rainfall</a>
-                            </li>
-                            <li>
-                                <a data-title="Usage" data-target="#usageGraph" ng-click="showUsage()"><i class="icon-refresh"></i>
-                                Usage Profile</a>
-                            </li>
-                            <li>
-                                <a data-title="Downspout" data-target="#spoutGraph" ng-click="showDownspout()"><i class="icon-resize-full"></i>
-                                Downspout Diameter</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<div class="btn-toolbar text-center">
+    <div class="btn-group">
+        <button type="button" class="btn active" data-title="Map" data-target="#map" ng-click="showSatellite()">
+            <i class="icon-map-marker"></i>
+            Map
+        </button>
+        <button type="button" class="btn" data-title="Rainfall" data-target="#rainGraph" ng-click="showRainfall()">
+            Rainfall
+        </button>
+        <button type="button" class="btn" data-title="Usage" data-target="#usageGraph" ng-click="showUsage()">
+            Usage
+        </button>
+        <button type="button" class="btn" data-title="Downspout" data-target="#spoutGraph" ng-click="showDownspout()">
+            Downspout
+        </button>
     </div>
+    <button type="button" class="btn pull-right" data-toggle="modal" data-target="#optionsMenu">
+        <i class="icon-wrench"></i>
+    </button>
 </div>
+
+<div class="input-append navbar-search">
+    <input class="span2" id="mapSearch" placeholder="Search Map" type="text">
+    <button class="btn" type="button">
+        <i class="icon-search"></i>
+    </button>
+</div>
+
 <div id="map"></div>
 <div id="graph">
     <p></p>

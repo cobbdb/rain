@@ -21,7 +21,7 @@ text-shadow:
 }
 #header h1 img + span {
     color: #47cf47;
-    font-size: 42px;
+    font-size: 44px;
 }
 @media (max-width: 979px) {
     #header h1 {
