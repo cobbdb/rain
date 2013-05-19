@@ -12,9 +12,10 @@
 #map {
     min-height: 200px;
 }
-/*#map img {
+/* Fix for repsponsive. */
+#map img {
     max-width: none;
-}*/
+}
 @media (max-width: 767px) {
     #map {
         max-height: 200px;

@@ -6,8 +6,8 @@ text-shadow:
     -1px 1px 0 #888,
     1px 1px 0 #888;
 }
-.bubblegum {
-    font-family: 'Bubblegum Sans';
+.cantora {
+    font-family: 'Cantora One';
 }
 .geo {
     font-family: 'Geo';
@@ -17,7 +17,7 @@ text-shadow:
 }
 #header h1 {
     color: #c7e0f0;
-    font-size: 40px;
+    font-size: 36px;
 }
 #header h1 img + span {
     color: #47cf47;
@@ -33,7 +33,7 @@ text-shadow:
 }
 @media (max-width: 768px) {
     #header h1 {
-        font-size: 30px;
+        font-size: 25px;
     }
     #header h1 img + span {
         font-size: 32px;
@@ -41,9 +41,9 @@ text-shadow:
 }
 @media (max-width: 480px) {
     #header h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     #header h1 img + span {
-        font-size: 24px;
+        font-size: 22px;
     }
 }

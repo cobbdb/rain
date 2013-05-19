@@ -4,19 +4,12 @@
 #header h1 {
     margin: 5px;
 }
-#header h1 * {
-    display: inline;
-    vertical-align: middle;
-}
 #header img {
-    height: 32px;
+    height: 40px;
 }
 @media (max-width: 767px) {
-    #header h1 {
-        text-align: center;
-    }
-    #header button {
-        margin: 0;
+    #header img {
+        height: 36px;
     }
 }
 @media (max-width: 480px) {
