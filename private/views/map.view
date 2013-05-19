@@ -1,5 +1,5 @@
-<div class="btn-toolbar text-center">
-    <div class="btn-group">
+<div class="btn-toolbar text-center row">
+    <div class="btn-group span5">
         <button type="button" class="btn active" data-title="Map" data-target="#map" ng-click="showSatellite()">
             <i class="icon-map-marker"></i>
             Map
@@ -14,7 +14,7 @@
             Downspout
         </button>
     </div>
-    <button type="button" class="btn pull-right" data-toggle="modal" data-target="#optionsMenu">
+    <button type="button" class="btn pull-right span1" data-toggle="modal" data-target="#optionsMenu">
         <i class="icon-wrench"></i>
     </button>
 </div>
