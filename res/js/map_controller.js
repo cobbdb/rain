@@ -1,4 +1,4 @@
-var MapController = function ($scope) {
+function MapController($scope) {
     var map, resizeTimer;
     
     // Bind map init.
@@ -73,23 +73,14 @@ var MapController = function ($scope) {
     
     var displayGraph = function () {
         $('#mapWell .navbar-search').hide();
-        $('#graph').fadeIn();
         $('#map').hide();
+        $('#graph').fadeIn();
     };
     
-    $scope.showSatellite = function () {
-        displayMap();
-    };
-    
-    $scope.showRainfall = function () {
-        displayGraph();
-    };
-    
-    $scope.showUsage = function () {
-        displayGraph();
-    };
-    
-    $scope.showDownspout = function () {
-        displayGraph();
-    };
-};
+    _($scope).extend({
+        showSatellite: displayMap,
+        showRainfall: displayGraph,
+        showUsage: displayGraph,
+        showDownspout: displayGraph
+    });
+}

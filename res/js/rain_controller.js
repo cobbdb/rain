@@ -6,8 +6,8 @@ function RainController($scope) {
     localStorage.version = localStorage.version || version;
     localStorage.showGuide = localStorage.showGuide || true;
     
+    // Reset configurations if new version.
     if (localStorage.version !== version) {
-        // Do config resets.
         localStorage.showGuide = true;
     }
     
@@ -25,6 +25,10 @@ function RainController($scope) {
                 .fadeOut({
                     queue: false
                 });
+        },
+        showGuide: localStorage.showGuide,
+        closeGuide: function () {
+            localStorage.showGuide = false;
         }
     });
 }

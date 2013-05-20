@@ -1,11 +1,11 @@
-<div id="footer" class="text-center navbar navbar-fixed-bottom">
+<div id="footer" class="text-center navbar navbar-fixed-bottom" ng-switch on="showGuide">
     <div id="construction" class="alert alert-error">
         <button type="button" class="close" data-dismiss="#construction" ng-click="dismiss($event)">&times;</button>
         <strong>Heads up!</strong>
         We're still under construction, but be sure to check back soon!
     </div>
-    <div id="guide" class="alert alert-info">
-        <button type="button" class="close" data-dismiss="#guide" ng-click="dismiss($event)">&times;</button>
+    <div id="guide" class="alert alert-info" ng-switch-when="true">
+        <button type="button" class="close" data-dismiss="#guide" ng-click="dismiss($event); closeGuide()">&times;</button>
         <strong>Guide:</strong>
         The final version will include instructional tips here.
     </div>

@@ -6,6 +6,7 @@
 
     <div class="modal-body">
         <p>One fine body…</p>
+        <!-- Remember to include a way to reenable the guide here. -->
     </div>
 
     <div class="modal-footer">
