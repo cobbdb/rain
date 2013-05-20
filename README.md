@@ -14,7 +14,6 @@ Libraries Used:
 * [jQuery](http://www.jquery.com)
 * [AngularJS](http://angularjs.org/)
 * [Bootstrap](http://twitter.github.io/bootstrap/)
-* [BootstrapJS](http://twitter.github.io/bootstrap/javascript.html)
 * [Google Maps JavaScript API](https://developers.google.com/maps/)
 * [Highcharts](http://www.highcharts.com)
 * [ELabel Extension](http://www.econym.org.uk/gmap/elabel.htm)
@@ -26,3 +25,5 @@ By Dan Cobb with Lonny Grafman
 
 * Dan Cobb: cobbdb@gmail.com - [petitgibier.sytes.net](http://petitgibier.sytes.net)
 * Lonny Grafman: lonny@appropedia.org - [appropedia.org](http://www.appropedia.org)
+
+License: MIT

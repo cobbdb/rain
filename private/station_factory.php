@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Creates stations from list of meta data.
+ * Creates stations from line of meta data.
  */
 class StationFactory {
     public static function newStation($line) {
