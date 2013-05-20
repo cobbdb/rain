@@ -1,5 +1,7 @@
 .btn-toolbar {
     overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 2px;
 }
 #mapWell {
     position: relative;

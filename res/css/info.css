@@ -1,7 +1,3 @@
-#infoWell .navbar {
-    margin-bottom: 10px;
-}
-#infoWell div.well h4 {
-    margin: 0;
-    text-align: center;
+#infoWell .accordion-heading:hover i + span {
+    text-decoration: underline;
 }

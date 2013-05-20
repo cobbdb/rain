@@ -1,10 +1,10 @@
 .stroke {
-text-shadow:
-    2px 2px 3px #555,
-    -1px -1px 0 #888,  
-    1px -1px 0 #888,
-    -1px 1px 0 #888,
-    1px 1px 0 #888;
+    text-shadow:
+        2px 2px 3px #555,
+        -1px -1px 0 #888,
+        1px -1px 0 #888,
+        -1px 1px 0 #888,
+        1px 1px 0 #888;
 }
 .cantora {
     font-family: 'Cantora One';
@@ -15,35 +15,35 @@ text-shadow:
 #pebrain a {
     color: white;
 }
-#header h1 {
+#header {
     color: #c7e0f0;
     font-size: 36px;
 }
-#header h1 img + span {
+#header img + span {
     color: #47cf47;
     font-size: 44px;
 }
 @media (max-width: 979px) {
-    #header h1 {
+    #header {
         font-size: 32px;
     }
-    #header h1 img + span {
+    #header img + span {
         font-size: 34px;
     }
 }
 @media (max-width: 768px) {
-    #header h1 {
+    #header {
         font-size: 25px;
     }
-    #header h1 img + span {
+    #header img + span {
         font-size: 32px;
     }
 }
 @media (max-width: 480px) {
-    #header h1 {
+    #header {
         font-size: 18px;
     }
-    #header h1 img + span {
+    #header img + span {
         font-size: 22px;
     }
 }

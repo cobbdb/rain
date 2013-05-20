@@ -3,16 +3,25 @@ var MapController = function ($scope) {
     
     // Bind map init.
     $(function () {
-        // Map height should match info height.
-        var height = $('#infoWell div:nth-child(2)').height();
-        $('#map').height(height);
+        $('#map').resize(function () {
+            console.log('BANG');
+        });
+        // Map fills to bottom of screen.
+        $(window).resize(function () {
+            var winHeight = $(window).height();
+            var mapTop = $('#map').offset().top;
+            var footHeight = $('#footer').height();
+            $('#map').height(winHeight - mapTop - footHeight);
+            console.log('well: ' + $('#mapWell').offset().top);
+            console.log('header: ' + $('#header').height());
+        }).resize();
         
         // Map options activate when clicked.
         $('#mapWell .btn-group .btn').click(function (e) {
             $('#mapWell .btn-group .btn').removeClass('active');
             $(e.target).addClass('active');
         });
-
+        
         // Create the google map.
         map = new google.maps.Map($('#map')[0], {
             draggableCursor: 'crosshair',

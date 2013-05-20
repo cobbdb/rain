@@ -2,7 +2,7 @@
     <div class="row">
         <?= H::render('header.view') ?>
     </div>
-    <hr/>
+    <!-- <hr/> -->
     <div class="row">
         <div id="mapWell" class="span6" ng-controller="MapController">
             <?= H::render('map.view') ?>
