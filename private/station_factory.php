@@ -21,6 +21,10 @@ class StationFactory {
         return new Station($station_id, $lat, $lng, $dist);
     }
     
+    /**
+     * @returns {Number} Distance in kilometers.
+     * @see http://www.johndcook.com/python_longitude_latitude.html
+     */
     private static function findDistance($lat1, $lng1, $lat2, $lng2) {
         $deg2rad = pi() / 180;
         
@@ -35,6 +39,7 @@ class StationFactory {
             cos($phi1) * cos($phi2)
         );
         $arc = acos($cos);
-        return round($arc * 6373, 2); // dist in km
+        // 6373 is magic number from algorithm's source. See link above.
+        return round($arc * 6373, 2);
     }
 }
