@@ -1,20 +1,19 @@
 var MapController = function ($scope) {
-    var map;
+    var map, resizeTimer;
     
     // Bind map init.
     $(function () {
-        $('#map').resize(function () {
-            console.log('BANG');
-        });
         // Map fills to bottom of screen.
         $(window).resize(function () {
             var winHeight = $(window).height();
             var mapTop = $('#map').offset().top;
             var footHeight = $('#footer').height();
             $('#map').height(winHeight - mapTop - footHeight);
-            console.log('well: ' + $('#mapWell').offset().top);
-            console.log('header: ' + $('#header').height());
-        }).resize();
+            google.maps.event.trigger(map, "resize");
+        });
+        resizeTimer = setInterval(function () {
+            $(window).resize();
+        }, 1000);
         
         // Map options activate when clicked.
         $('#mapWell .btn-group .btn').click(function (e) {

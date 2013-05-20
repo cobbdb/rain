@@ -1,6 +1,5 @@
-hr {
-    margin: 0;
-    margin-bottom: 5px;
+hr.visible-phone {
+    margin: 5px 0;
 }
 .dropdown {
     cursor: pointer;

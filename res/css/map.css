@@ -14,7 +14,10 @@
 #map {
     min-height: 200px;
 }
-/* Fix for repsponsive. */
+/**
+ * Fix for distorted controls in bootstrap.
+ * @see https://github.com/twitter/bootstrap/issues/3407
+ */
 #map img {
     max-width: none;
 }
