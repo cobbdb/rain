@@ -25,5 +25,3 @@ By Dan Cobb with Lonny Grafman
 
 * Dan Cobb: cobbdb@gmail.com - [petitgibier.sytes.net](http://petitgibier.sytes.net)
 * Lonny Grafman: lonny@appropedia.org - [appropedia.org](http://www.appropedia.org)
-
-License: MIT
