@@ -9,6 +9,9 @@
     background-color: #f6f6f6;
     z-index: -1000;
 }
+#headerBkg + div {
+    margin-bottom: 7px;
+}
 #header img {
     height: 40px;
 }
