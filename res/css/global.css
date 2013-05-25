@@ -4,10 +4,11 @@ hr.visible-phone {
 .dropdown {
     cursor: pointer;
 }
-.noradius, .well {
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
+/* Border radius needs to die. */
+* {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
 }
 .hero-unit {
     padding: 20px;
