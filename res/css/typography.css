@@ -15,9 +15,12 @@
 #pebrain a {
     color: white;
 }
-#header {
+#header span {
     color: #c7e0f0;
     font-size: 36px;
+}
+#header a {
+    text-decoration: none;
 }
 #header img + span {
     color: #47cf47;
