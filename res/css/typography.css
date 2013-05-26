@@ -27,7 +27,7 @@
     font-size: 44px;
 }
 @media (max-width: 979px) {
-    #header {
+    #header span {
         font-size: 32px;
     }
     #header img + span {
@@ -35,7 +35,7 @@
     }
 }
 @media (max-width: 768px) {
-    #header {
+    #header span {
         font-size: 25px;
     }
     #header img + span {
@@ -43,7 +43,7 @@
     }
 }
 @media (max-width: 480px) {
-    #header {
+    #header span {
         font-size: 18px;
     }
     #header img + span {
