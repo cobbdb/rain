@@ -1,6 +1,5 @@
 <div id="page" class="container" ng-controller="RainController" ng-app>
     <?= H::render('header.view') ?>
-    <!-- <hr/> -->
     <div class="row">
         <div id="mapWell" class="span6" ng-controller="MapController">
             <?= H::render('map.view') ?>
