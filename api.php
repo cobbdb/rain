@@ -196,8 +196,8 @@ function getNextStation() {
 function file_init() {
     global $fin_precip, $fin_meta;
     
-    $fin_precip = fopen("v2.prcp", 'r');
-    $fin_meta = fopen("v2.prcp.inv", 'r');
+    $fin_precip = fopen("data/v2.prcp", 'r');
+    $fin_meta = fopen("data/v2.prcp.inv", 'r');
 }
 
 /**
