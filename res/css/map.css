@@ -21,11 +21,16 @@
 #map img {
     max-width: none;
 }
+@media (max-width: 976px) {
+    #map {
+        max-height: 500px;
+    }
+    .navbar-fixed-bottom {
+        margin-top: 0;
+    }
+}
 @media (max-width: 767px) {
     #map {
         max-height: 200px;
     }
-}
-@media (max-width: 480px) {
-    
 }

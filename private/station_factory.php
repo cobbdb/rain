@@ -16,7 +16,7 @@ class StationFactory {
         
         // find distance to coords
         global $in_lat, $in_lng;
-        $dist = findDistance($in_lat, $in_lng, $lat, $lng);
+        $dist = self::findDistance($in_lat, $in_lng, $lat, $lng);
         
         return new Station($station_id, $lat, $lng, $dist);
     }
