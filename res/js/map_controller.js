@@ -31,13 +31,7 @@ function MapController($scope) {
             tilt: 0,
             mapTypeId: google.maps.MapTypeId.SATELLITE,
             disableDoubleClickZoon: true,
-            mapTypeControl: true,
-            mapTypeControlOptions: {
-                mapTypeIds: [
-                    google.maps.MapTypeId.SATELLITE,
-                    google.maps.MapTypeId.HYBRID
-                ]
-            },
+            mapTypeControl: false,
             streetViewControl: false,
             panControl: false
         });
