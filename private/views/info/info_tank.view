@@ -1,0 +1,18 @@
+<ul>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Storage Distance',
+        'data' => '{{ data.annualRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Tank Size',
+        'data' => '{{ data.annualRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Full Tank Weight',
+        'data' => '{{ data.annualRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'First Flush Size',
+        'data' => '{{ data.annualRainfall }}'
+    )) ?>
+</ul>

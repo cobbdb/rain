@@ -1,0 +1,18 @@
+<ul>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Roof Area',
+        'data' => '{{ data.monthlyRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Roof Material',
+        'data' => '{{ data.monthlyRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'System Efficiency',
+        'data' => '{{ data.monthlyRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Monthly Usage',
+        'data' => '{{ data.monthlyRainfall }}'
+    )) ?>
+</ul>

@@ -1,0 +1,14 @@
+<ul>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Monthly Rainfall',
+        'data' => '{{ data.monthlyRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Annual Rainfall',
+        'data' => '{{ data.annualRainfall }}'
+    )) ?>
+    <?= H::render('info/entry.tpl', Array(
+        'title' => 'Annual Collection',
+        'data' => '{{ data.annualRainfall }}'
+    )) ?>
+</ul>

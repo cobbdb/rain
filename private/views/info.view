@@ -1,7 +1,7 @@
 <div class="accordion" id="infoAccordion">
     <div class="accordion-group">
         <div class="accordion-heading">
-            <span class="accordion-toggle" data-toggle="collapse" data-parent="#infoAccordion" href="#collapseRain">
+            <span class="accordion-toggle" data-toggle="collapse" data-target="#collapseRain">
                 <i class="icon-tint"></i>
                 <span>Rainwater</span>
                 <i class="icon-chevron-down pull-right"></i>
@@ -9,12 +9,13 @@
         </div>
         <div id="collapseRain" class="accordion-body collapse in">
             <div class="accordion-inner">
+                <?= H::render('info/info_rain.view') ?>
             </div>
         </div>
     </div>
     <div class="accordion-group">
         <div class="accordion-heading">
-            <span class="accordion-toggle" data-toggle="collapse" data-parent="#infoAccordion" href="#collapseTank">
+            <span class="accordion-toggle" data-toggle="collapse" data-target="#collapseTank">
                 <i class="icon-folder-close"></i>
                 <span>Tank</span>
                 <i class="icon-chevron-down pull-right"></i>
@@ -22,12 +23,13 @@
         </div>
         <div id="collapseTank" class="accordion-body collapse">
             <div class="accordion-inner">
+                <?= H::render('info/info_tank.view') ?>
             </div>
         </div>
     </div>
     <div class="accordion-group">
         <div class="accordion-heading">
-            <span class="accordion-toggle" data-toggle="collapse" data-parent="#infoAccordion" href="#collapseSystem">
+            <span class="accordion-toggle" data-toggle="collapse" data-target="#collapseSystem">
                 <i class="icon-retweet"></i>
                 <span>System</span>
                 <i class="icon-chevron-down pull-right"></i>
@@ -35,6 +37,7 @@
         </div>
         <div id="collapseSystem" class="accordion-body collapse">
             <div class="accordion-inner">
+                <?= H::render('info/info_system.view') ?>
             </div>
         </div>
     </div>
