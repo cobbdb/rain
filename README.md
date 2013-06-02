@@ -19,6 +19,7 @@ Libraries Used:
 * [ELabel Extension](http://www.econym.org.uk/gmap/elabel.htm)
 * [Eta](http://www.github.com/cobbdb/eta)
 * [Grunt](http://gruntjs.com/)
+* [Underscore](http://underscorejs.org/)
 
 ---
 By Dan Cobb with Lonny Grafman
