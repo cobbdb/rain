@@ -1,4 +1,4 @@
-<ul>
+<form class="form-horizontal">
     <?= H::render('info/entry.tpl', Array(
         'title' => 'Storage Distance',
         'data' => '{{ data.annualRainfall }}'
@@ -13,6 +13,6 @@
     )) ?>
     <?= H::render('info/entry.tpl', Array(
         'title' => 'First Flush Size',
-        'data' => '{{ data.annualRainfall }}'
+        'data' => '123 mm'
     )) ?>
-</ul>
+</form>

@@ -1,8 +1,10 @@
-<li>
-    <span class="infoTitle">
+<div class="control-group">
+    <label class="infoTitle control-label">
         <?= $title ?>:
-    </span>
-    <span class="infoData">
-        <?= $data ?>
-    </span>
-</li>
+    </label>
+    <div class="controls">
+        <label class="infoData checkbox">
+            <?= $data ?>
+        </label>
+    </div>
+</div>
