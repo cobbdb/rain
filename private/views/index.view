@@ -10,6 +10,5 @@
         </div>
     </div>
     <?= H::render('footer.view') ?>
+    <?= H::render('options.view') ?>
 </div>
-
-<?= H::render('options.view') ?>

@@ -22,17 +22,11 @@
 <script src="res/placeholder.min.js"></script>
 <script src="res/js/devText.js"></script>
 
-<script>
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-26042472-1']);
-_gaq.push(['_trackPageview']);(function(){var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();
-</script>
+<!-- Google Analytics -->
+<script>var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26042472-1']);_gaq.push(['_trackPageview']);(function(){var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();</script>
 
-<!-- <meta name="google-translate-customization" content="cf6f90d30cac88d-2bda3379a0f9b865-g2522b8edb7d27cab-10"/>
-<script>
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",layout:google.translate.TranslateElement.FloatPosition.TOP_LEFT},"google_translate_element")};
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+<!-- Google Translate Widget -->
+<meta name="google-translate-customization" content="c78d6550bf27a558-e96b67670c2b8b0f-g99be12627be503c2-14"></meta>
 
 <link href="//normalize-css.googlecode.com/svn/trunk/normalize.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">

@@ -1,17 +1,39 @@
 <div id="optionsMenu" class="modal hide fade">
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h3>Options Menu</h3>
     </div>
 
     <div class="modal-body">
-        <p>One fine body…</p>
-        <!-- Remember to include a way to reenable the guide here. -->
-        <!-- Remember to add hybrid map enable option here. -->
+        <form class="form-horizontal">
+            <!-- Guide Control -->
+            <div class="control-group">
+                <label class="control-label">Guide Control</label>
+                <div class="controls">
+                    <div ng-switch on="guideIsVisible">
+                        <button type="button" class="btn" ng-switch-when="true" ng-click="hideGuide()">Hide Guide</button>
+                        <button type="button" class="btn" ng-switch-when="false" ng-click="showGuide()">Show Guide</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Type Control -->
+            <div class="control-group">
+                <label class="control-label">Map Type</label>
+                <div class="controls">
+                    <select ng-model="mapType" ng-selected="changeMapType()" ng-options="option for option in allMapTypes"></select>
+                </div>
+            </div>
+            <!-- Language Control -->
+            <div class="control-group">
+                <label class="control-label">Language</label>
+                <div class="controls">
+                    <!-- Google Translate -->
+                    <div id="google_translate_element"></div><script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")};</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
+            </div>
+        </form>
     </div>
 
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal">Close</button>
-        <button class="btn btn-primary" data-dismiss="modal">Apply</button>
     </div>
 </div>

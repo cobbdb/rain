@@ -1,5 +1,5 @@
 function MapController($scope) {
-    var map, resizeTimer;
+    var resizeTimer;
     
     // Bind map init.
     $(function () {
@@ -9,7 +9,7 @@ function MapController($scope) {
             var mapTop = $('#map').offset().top;
             var footHeight = $('#footer').height();
             $('#map').height(winHeight - mapTop - footHeight);
-            google.maps.event.trigger(map, "resize");
+            google.maps.event.trigger($scope.map, "resize");
         });
         resizeTimer = setInterval(function () {
             $(window).resize();
@@ -21,21 +21,6 @@ function MapController($scope) {
             $(e.target).addClass('active');
         });
         
-        // Create the google map.
-        map = new google.maps.Map($('#map')[0], {
-            draggableCursor: 'crosshair',
-            draggingCursor: 'move',
-            // Initial center is HSU's CCAT building.
-            center: new google.maps.LatLng(40.872738, -124.077417),
-            zoom: 18,
-            tilt: 0,
-            mapTypeId: google.maps.MapTypeId.SATELLITE,
-            disableDoubleClickZoon: true,
-            mapTypeControl: false,
-            streetViewControl: false,
-            panControl: false
-        });
-        
         // Center map at user's location.
         $.ajax({
             url: '//www.geoplugin.net/json.gp',
@@ -44,7 +29,7 @@ function MapController($scope) {
             success: function (res) {
                 var lat = res.geoplugin_latitude;
                 var lng = res.geoplugin_longitude;
-                map.setCenter(new google.maps.LatLng(lat, lng));
+                $scope.map.setCenter(new google.maps.LatLng(lat, lng));
             },
             error: function (xhr) {
                 var tpl = _.template('Could not center map - <%= status %> : <%= text %>.');

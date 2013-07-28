@@ -1,4 +1,4 @@
 $(function () {
-    $('#optionsMenu .modal-body').placeholder();
+    //$('#optionsMenu .modal-body').placeholder();
     $('#graph p').placeholder();
 });
