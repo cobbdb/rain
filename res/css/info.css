@@ -1,3 +1,6 @@
 #infoWell .accordion-heading:hover i + span {
     text-decoration: underline;
 }
+.accordion-inner {
+    background: #fafafa;
+}
