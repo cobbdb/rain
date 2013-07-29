@@ -2,9 +2,6 @@
     margin: 0;
     padding: 0;
 }
-body {
-    padding-bottom: 22px;
-}
 #footer .alert .close {
     position: static;
     margin-right: 5px;
