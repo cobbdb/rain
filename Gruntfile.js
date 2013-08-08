@@ -9,10 +9,10 @@ module.exports = function (grunt) {
                 nonew: false,
                 plusplus: true,
                 quotmark: false,
-                trailing: true
+                trailing: false
             },
             default: {
-                src: ['./res/js/*.js']
+                src: ['./private/js/*.js']
             }
         },
         uglify: {
@@ -28,20 +28,20 @@ module.exports = function (grunt) {
                 }
             },
             default: {
-                src: ['./res/js/*.js'],
+                src: ['./private/js/*.js'],
                 dest: './res/rain.min.js'
             }
         },
         cssmin: {
             default: {
-                src: ['./res/css/*.css'],
+                src: ['./private/css/*.css'],
                 dest: './res/rain.min.css'
             }
         },
         watch: {
             files: [
-                './res/js/*.js',
-                './res/css/*.css'
+                './private/js/*.js',
+                './private/css/*.css'
             ],
             tasks: [
                 'deploy'
