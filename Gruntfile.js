@@ -39,13 +39,21 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: [
-                './private/js/*.js',
-                './private/css/*.css'
-            ],
-            tasks: [
-                'deploy'
-            ]
+            scripts: {
+                files: [
+                    './private/js/*.js'
+                ],
+                tasks: [
+                    'jshint',
+                    'uglify'
+                ]
+            },
+            styles: {
+                files: [
+                    './private/css/*.css'
+                ],
+                tasks: ['cssmin']
+            }
         }
     });
 
