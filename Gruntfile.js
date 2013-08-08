@@ -3,12 +3,12 @@ module.exports = function (grunt) {
         jshint: {
             options: {
                 curly: true,
-                eqeqeq: true,
+                eqeqeq: false,
                 indent: 4,
                 noarg: true,
                 nonew: false,
                 plusplus: true,
-                quotmark: true,
+                quotmark: false,
                 trailing: true
             },
             default: {
@@ -20,11 +20,21 @@ module.exports = function (grunt) {
                 src: ['./res/js/*.js'],
                 dest: './res/rain.min.js'
             }
+        },
+        watch: {
+            files: [
+                './res/js/*.js',
+            ],
+            tasks: [
+                'jshint',
+                'uglify'
+            ]
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('deploy', [
         'jshint',

@@ -5,13 +5,13 @@ function RainController($scope) {
     var version = '2.1.0';
     localStorage.version = localStorage.version || version;
     localStorage.guideIsVisible = localStorage.guideIsVisible || true;
-    
+
     // Reset configurations if new version.
     if (localStorage.version !== version) {
         localStorage.guideIsVisible = true;
         localStorage.version = version;
     }
-    
+
     _($scope).extend({
         approUrl: 'http://www.appropedia.org/Rainwater_Collection_Calculator',
         /**

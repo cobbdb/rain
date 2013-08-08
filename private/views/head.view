@@ -14,14 +14,8 @@
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCdIZENrPra9esL7GQpBU5kIC-mGtQkUWg&amp;sensor=false"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 <script src="res/dragscrollable.min.js"></script>
-<!-- <script src="res/rain.min.js"></script> -->
-<script src="res/js/util.js"></script>
-<script src="res/js/map_controller.js"></script>
-<script src="res/js/rain_controller.js"></script>
-<script src="res/js/info_controller.js"></script>
-
 <script src="res/placeholder.min.js"></script>
-<script src="res/js/devText.js"></script>
+<script src="res/rain.min.js"></script>
 
 <!-- Google Analytics -->
 <script>var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26042472-1']);_gaq.push(['_trackPageview']);(function(){var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();</script>

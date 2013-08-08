@@ -1,7 +1,7 @@
 function MapController($scope) {
     var resizeTimer;
     var geocoder = new google.maps.Geocoder();
-    
+
     // Bind map init.
     $(function () {
         // Map fills to bottom of screen.
@@ -10,18 +10,18 @@ function MapController($scope) {
             var mapTop = $('#map').offset().top;
             var footHeight = $('#footer').height();
             $('#map').height(winHeight - mapTop - footHeight);
-            google.maps.event.trigger($scope.map, "resize");
+            google.maps.event.trigger($scope.map, 'resize');
         });
         resizeTimer = setInterval(function () {
             $(window).resize();
         }, 1000);
-        
+
         // Map options activate when clicked.
         $('#mapWell .btn-group .btn').click(function (e) {
             $('#mapWell .btn-group .btn').removeClass('active');
             $(e.target).addClass('active');
         });
-        
+
         // Map options are scrollable.
         $('#mapWell .btn-group').dragscrollable({
             dragSelector: 'button'
@@ -45,23 +45,23 @@ function MapController($scope) {
                 }));
             }
         });
-        
+
         // Map is default layer.
         displayMap();
     });
-    
+
     var displayMap = function () {
         $('#mapWell .navbar-search').show();
         $('#graph').hide();
         $('#map').fadeIn();
     };
-    
+
     var displayGraph = function () {
         $('#mapWell .navbar-search').hide();
         $('#map').hide();
         $('#graph').fadeIn();
     };
-    
+
     _($scope).extend({
         showSatellite: displayMap,
         showRainfall: displayGraph,
