@@ -54,6 +54,20 @@ function RainController($scope) {
         hideGuide: function () {
             localStorage.guideIsVisible = false;
             $scope.guideIsVisible = false;
+        },
+        alerts: [
+            "We're still under construction, but be sure to check back soon!"
+        ],
+        addAlert: function (msg) {
+            $scope.alerts.push(msg);
+            $scope.$apply();
+            $scope.blink('#footErr' + ($scope.alerts.length - 1));
+        },
+        blink: function (id) {
+            console.log('blinking ' + id);
+            for (var i = 0; i < 2; i += 1) {
+                $(id).fadeTo('fast', 0.5).fadeTo('fast', 1.0);
+            }
         }
     });
 }

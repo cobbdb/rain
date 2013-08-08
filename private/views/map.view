@@ -19,12 +19,12 @@
     </button>
 </div>
 
-<div class="input-append navbar-search">
-    <input class="span2" id="mapSearch" placeholder="Search Map" type="text">
-    <button class="btn" type="button">
+<form class="input-append navbar-search" ng-submit="search()">
+    <input class="span2" id="mapSearch" placeholder="Search Map" type="text" required>
+    <button class="btn" type="submit">
         <i class="icon-search"></i>
     </button>
-</div>
+</form>
 
 <div id="map"></div>
 <div id="graph">

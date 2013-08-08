@@ -1,8 +1,8 @@
 <div id="footer" class="text-center navbar navbar-fixed-bottom">
-    <div id="construction" class="alert alert-error">
-        <button type="button" class="close" data-dismiss="#construction" ng-click="dismiss($event)">&times;</button>
+    <div ng-repeat="msg in alerts" class="alert alert-error" id="footErr{{ $index }}">
+        <button type="button" class="close" data-dismiss="#footErr{{ $index }}" ng-click="dismiss($event)">&times;</button>
         <strong>Heads up!</strong>
-        We're still under construction, but be sure to check back soon!
+        {{ msg }}
     </div>
     <div ng-switch on="guideIsVisible">
         <div id="guide" class="alert alert-info" ng-switch-when="true">

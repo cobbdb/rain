@@ -1,5 +1,6 @@
 function MapController($scope) {
     var resizeTimer;
+    var geocoder = new google.maps.Geocoder();
     
     // Bind map init.
     $(function () {
@@ -60,6 +61,17 @@ function MapController($scope) {
         showSatellite: displayMap,
         showRainfall: displayGraph,
         showUsage: displayGraph,
-        showDownspout: displayGraph
+        showDownspout: displayGraph,
+        search: function () {
+            geocoder.geocode({
+                'address': $('#mapSearch').val()
+            }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    $scope.map.setCenter(results[0].geometry.location);
+                } else {
+                    $scope.addAlert('Search was not successful for the following reason: ' + status);
+                }
+            });
+        }
     });
 }
