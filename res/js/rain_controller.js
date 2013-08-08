@@ -9,6 +9,7 @@ function RainController($scope) {
     // Reset configurations if new version.
     if (localStorage.version !== version) {
         localStorage.guideIsVisible = true;
+        localStorage.version = version;
     }
     
     _($scope).extend({
@@ -61,12 +62,21 @@ function RainController($scope) {
         addAlert: function (msg) {
             $scope.alerts.push(msg);
             $scope.$apply();
-            $scope.blink('#footErr' + ($scope.alerts.length - 1));
+            var index = $scope.alerts.length - 1;
+            $scope.blink('#footErr' + index);
         },
         blink: function (id) {
-            console.log('blinking ' + id);
             for (var i = 0; i < 2; i += 1) {
-                $(id).fadeTo('fast', 0.5).fadeTo('fast', 1.0);
+                $(id)
+                    .fadeTo('fast', 0.5)
+                    .fadeTo('fast', 1.0);
+            }
+        },
+        data: {
+            efficiency: 1,
+            getEfficiency: function () {
+                var eff = parseFloat($scope.data.efficiency);
+                return eff.toPercentage();
             }
         }
     });

@@ -1,17 +1,27 @@
 <form class="form-horizontal">
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/text_entry.tpl', Array(
         'title' => 'Roof Area',
         'data' => '{{ data.monthlyRainfall }}'
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/select_entry.tpl', Array(
         'title' => 'Roof Material',
-        'data' => '{{ data.monthlyRainfall }}'
+        'model' => 'data.efficiency',
+        'options' => Array(
+            'Perfect' => 1,
+            'Tile' => 0.95,
+            'Metal' => 0.95,
+            'Concrete' => 0.95,
+            'Asphalt' => 0.95,
+            'Gravel' => 0.7,
+            'Soil' => 0.75,
+            'Grass' => 0.17
+        )
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/string_entry.tpl', Array(
         'title' => 'System Efficiency',
-        'data' => '{{ data.monthlyRainfall }}'
+        'data' => '{{ data.getEfficiency() }}%'
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/string_entry.tpl', Array(
         'title' => 'Monthly Usage',
         'data' => '{{ data.monthlyRainfall }}'
     )) ?>

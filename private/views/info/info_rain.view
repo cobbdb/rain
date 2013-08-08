@@ -1,13 +1,13 @@
 <form class="form-horizontal">
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/string_entry.tpl', Array(
         'title' => 'Monthly Rainfall',
         'data' => '12 in'
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/string_entry.tpl', Array(
         'title' => 'Annual Rainfall',
         'data' => '234 in'
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/string_entry.tpl', Array(
         'title' => 'Annual Collection',
         'data' => '{{ data.annualRainfall }}'
     )) ?>

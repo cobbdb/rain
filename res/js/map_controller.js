@@ -65,9 +65,9 @@ function MapController($scope) {
         search: function () {
             geocoder.geocode({
                 'address': $('#mapSearch').val()
-            }, function (results, status) {
+            }, function (res, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
-                    $scope.map.setCenter(results[0].geometry.location);
+                    $scope.map.setCenter(res[0].geometry.location);
                 } else {
                     $scope.addAlert('Search was not successful for the following reason: ' + status);
                 }

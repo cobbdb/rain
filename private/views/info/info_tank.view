@@ -1,17 +1,17 @@
 <form class="form-horizontal">
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/text_entry.tpl', Array(
         'title' => 'Storage Distance',
         'data' => '{{ data.annualRainfall }}'
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/text_entry.tpl', Array(
         'title' => 'Tank Size',
         'data' => '{{ data.annualRainfall }}'
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/string_entry.tpl', Array(
         'title' => 'Full Tank Weight',
         'data' => '{{ data.annualRainfall }}'
     )) ?>
-    <?= H::render('info/entry.tpl', Array(
+    <?= H::render('info/string_entry.tpl', Array(
         'title' => 'First Flush Size',
         'data' => '123 mm'
     )) ?>
