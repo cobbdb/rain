@@ -10,8 +10,8 @@
         <button type="button" class="btn" data-title="Usage" data-target="#usageGraph" ng-click="showUsage()">
             Usage
         </button>
-        <button type="button" class="btn" data-title="Tank Level" data-target="#levelGraph" ng-click="showLevels()">
-            Tank Level
+        <button type="button" class="btn" data-title="Tank Levels" data-target="#levelsGraph" ng-click="showLevels()">
+            Tank Levels
         </button>
         <button type="button" class="btn" data-title="Downspout" data-target="#spoutGraph" ng-click="showDownspout()">
             Downspout

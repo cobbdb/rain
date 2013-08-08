@@ -22,6 +22,11 @@ function MapController($scope) {
             $(e.target).addClass('active');
         });
         
+        // Map options are scrollable.
+        $('#mapWell .btn-group').dragscrollable({
+            dragSelector: 'button'
+        });
+
         // Center map at user's location.
         $.ajax({
             url: '//www.geoplugin.net/json.gp',

@@ -3,6 +3,13 @@
     margin-top: 0;
     margin-bottom: 2px;
 }
+#mapWell .btn-group {
+    overflow-x: hidden;
+}
+#mapWell .btn-group button {
+    float: none;
+    display: inline-block;
+}
 #mapWell {
     position: relative;
 }
