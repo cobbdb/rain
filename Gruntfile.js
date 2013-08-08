@@ -16,6 +16,17 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
+            options: {
+                mangle: {
+                    except: [
+                        '_',
+                        '$',
+                        '$scope',
+                        '$index',
+                        '$event'
+                    ]
+                }
+            },
             default: {
                 src: ['./res/js/*.js'],
                 dest: './res/rain.min.js'
