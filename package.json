@@ -4,22 +4,21 @@
   "description": "Rainwater collection calculator for use in feasibility analysis of residential and commercial rainwater catchment systems.",
   "main": "index.php",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./node_modules/.bin/grunt deploy"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/cobbdb/rain"
   },
   "author": "Dan Cobb",
-  "license": "BSD",
-  "gitHead": "bbb1d0483e207d507c00a5d7d40dc4d4fcb65d8d",
+  "license": "default",
   "readmeFilename": "README.md",
-  "devDependencies": {
+  "dependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-cssmin": "~0.6.1",
     "grunt-contrib-htmlmin": "~0.1.3",
     "grunt-contrib-jshint": "~0.4.3",
-    "grunt-contrib-uglify": "~0.2.0",
-    "grunt-contrib-jasmine": "~0.4.2"
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-cli": "~0.1.9"
   }
 }

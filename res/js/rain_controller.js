@@ -62,6 +62,7 @@ function RainController($scope) {
         addAlert: function (msg) {
             $scope.alerts.push(msg);
             $scope.$apply();
+            // Blink the newest alert.
             var index = $scope.alerts.length - 1;
             $scope.blink('#footErr' + index);
         },

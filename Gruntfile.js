@@ -6,7 +6,7 @@ module.exports = function (grunt) {
                 eqeqeq: true,
                 indent: 4,
                 noarg: true,
-                nonew: true,
+                nonew: false,
                 plusplus: true,
                 quotmark: true,
                 trailing: true
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', [
+    grunt.registerTask('deploy', [
         'jshint',
         'uglify',
     ]);
