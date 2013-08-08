@@ -26,10 +26,4 @@
 <link href="//normalize-css.googlecode.com/svn/trunk/normalize.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Geo|Cantora+One" rel="stylesheet">
-<!-- <link href="res/rain.min.css" rel="stylesheet"> Don't worry.. coming soon. -->
-<link href="res/css/global.css" rel="stylesheet">
-<link href="res/css/map.css" rel="stylesheet">
-<link href="res/css/footer.css" rel="stylesheet">
-<link href="res/css/typography.css" rel="stylesheet">
-<link href="res/css/header.css" rel="stylesheet">
-<link href="res/css/info.css" rel="stylesheet">
+<link href="res/rain.min.css" rel="stylesheet">

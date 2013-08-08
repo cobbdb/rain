@@ -32,13 +32,19 @@ module.exports = function (grunt) {
                 dest: './res/rain.min.js'
             }
         },
+        cssmin: {
+            default: {
+                src: ['./res/css/*.css'],
+                dest: './res/rain.min.css'
+            }
+        },
         watch: {
             files: [
                 './res/js/*.js',
+                './res/css/*.css'
             ],
             tasks: [
-                'jshint',
-                'uglify'
+                'deploy'
             ]
         }
     });
@@ -46,9 +52,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('deploy', [
         'jshint',
         'uglify',
+        'cssmin'
     ]);
 };
