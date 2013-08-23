@@ -3,7 +3,7 @@
         <?= $title ?>:
     </label>
     <div class="controls">
-        <label class="checkbox" ng-model="<?= $model ?>">
+        <label class="checkbox">
             <?= $data ?>
         </label>
     </div>

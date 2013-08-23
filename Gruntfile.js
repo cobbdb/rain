@@ -9,7 +9,7 @@ module.exports = function (grunt) {
                 nonew: false,
                 plusplus: true,
                 quotmark: false,
-                trailing: false
+                trailing: true
             },
             default: {
                 src: ['./private/js/*.js']
@@ -19,8 +19,6 @@ module.exports = function (grunt) {
             options: {
                 mangle: {
                     except: [
-                        '_',
-                        '$',
                         '$scope',
                         '$index',
                         '$event'

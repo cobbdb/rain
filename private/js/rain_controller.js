@@ -78,7 +78,8 @@ function RainController($scope) {
             getEfficiency: function () {
                 var eff = parseFloat($scope.data.efficiency);
                 return eff.toPercentage();
-            }
+            },
+            monthlyRainfall: 12
         }
     });
 }
