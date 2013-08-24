@@ -1,15 +1,17 @@
 <?php $months = Array(
-    Array('Ja', 'Fe', 'Ma', 'Ap', 'Ma', 'Ju'),
-    Array('Jy', 'Au', 'Se', 'Oc', 'No', 'De')
+    'Ja', 'Fe', 'Ma', 'Ap', 'Ma', 'Ju',
+    'Jy', 'Au', 'Se', 'Oc', 'No', 'De'
 ) ?>
-<?php foreach ($months as $i => $row) { ?>
-    <div class="row">
-    <?php foreach ($row as $j => $month) { ?>
-        <?php $id = "$prefix-mo-" . ($i + $j) ?>
-        <div class="input-prepend span2">
-            <span class="add-on"><?= $month ?></span>
-            <input class="input-mini" id="<?= $id ?>" type="text">
-        </div>
-    <?php } ?>
+<form class="input-grid">
+<?php foreach ($months as $i => $month) { ?>
+    <?php $id = "$prefix-mo-$i" ?>
+    <div class="input-prepend">
+        <span class="add-on"><?= $month ?></span>
+        <input class="input-mini" id="<?= $id ?>" type="text">
     </div>
 <?php } ?>
+</form>
+<form class="form-inline grid-options">
+    <label>Autofill?</label>
+    <button class="switch switch-on"></button>
+</form>

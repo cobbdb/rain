@@ -11,4 +11,6 @@
     </div>
     <?= H::render('footer.view') ?>
     <?= H::render('options.view') ?>
+    <?= H::render('grid_rainfall.view') ?>
+    <?= H::render('grid_usage.view') ?>
 </div>

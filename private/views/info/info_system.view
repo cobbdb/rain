@@ -21,8 +21,9 @@
         'title' => 'System Efficiency',
         'data' => '{{ data.getEfficiency() }}%'
     )) ?>
-    <?= H::render('info/string_entry.view', Array(
+    <?= H::render('info/modal_entry.view', Array(
         'title' => 'Monthly Usage',
-        'data' => '{{ data.monthlyRainfall }}'
+        'data' => 'Show Grid',
+        'target' => '#usage-grid'
     )) ?>
 </form>

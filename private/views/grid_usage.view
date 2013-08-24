@@ -1,0 +1,13 @@
+<div id="usage-grid" class="modal hide fade">
+    <div class="modal-header">
+        <h3>Monthly Water Usage</h3>
+    </div>
+    <div class="modal-body">
+        <?= H::render('input_grid.view', Array(
+            'prefix' => 'use'
+        )) ?>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+</div>

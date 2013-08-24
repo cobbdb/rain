@@ -67,11 +67,11 @@ function RainController($scope) {
             $scope.blink('#footErr' + index);
         },
         blink: function (id) {
-            for (var i = 0; i < 2; i += 1) {
-                $(id)
-                    .fadeTo('fast', 0.5)
-                    .fadeTo('fast', 1.0);
-            }
+            $(id)
+                .fadeTo('fast', 0.5)
+                .fadeTo('fast', 1.0)
+                .fadeTo('fast', 0.5)
+                .fadeTo('fast', 1.0);
         },
         data: {
             efficiency: 1,
