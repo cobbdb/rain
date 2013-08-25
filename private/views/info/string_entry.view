@@ -3,8 +3,9 @@
         <?= $title ?>:
     </label>
     <div class="controls">
-        <label class="checkbox">
-            <?= $data ?>
-        </label>
+        <div class="input-append">
+            <input type="text" placeholder="No data" class="input-small" value="<?= $value ?>" disabled>
+            <span class="add-on"><?= $unit ?></span>
+        </div>
     </div>
 </div>

@@ -4,14 +4,12 @@
         'data' => 'Show Grid',
         'target' => '#rain-grid'
     )) ?>
-    <?= H::render('info/text_entry.view', Array(
+    <?= H::render('info/string_entry.view', Array(
         'title' => 'Annual Rainfall',
-        'extra' => 'disabled',
         'unit' => 'cm'
     )) ?>
-    <?= H::render('info/text_entry.view', Array(
+    <?= H::render('info/string_entry.view', Array(
         'title' => 'Annual Collection',
-        'extra' => 'disabled',
         'unit' => 'L'
     )) ?>
 </form>

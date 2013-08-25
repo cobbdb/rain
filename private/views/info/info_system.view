@@ -20,7 +20,8 @@
     )) ?>
     <?= H::render('info/string_entry.view', Array(
         'title' => 'System Efficiency',
-        'data' => '{{ data.getEfficiency() }}%'
+        'value' => '{{data.getEfficiency()}}',
+        'unit' => '%'
     )) ?>
     <?= H::render('info/modal_entry.view', Array(
         'title' => 'Monthly Usage',

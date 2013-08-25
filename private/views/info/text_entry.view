@@ -4,7 +4,7 @@
     </label>
     <div class="controls">
         <div class="input-append">
-            <input type="text" ng-model="<?= $model ?>" placeholder="No data" <?= $extra ?> class="input-small">
+            <input type="text" ng-model="<?= $model ?>" placeholder="No data" class="input-small">
             <span class="add-on"><?= $unit ?></span>
         </div>
     </div>

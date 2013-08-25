@@ -3,7 +3,7 @@
         <?= $title ?>:
     </label>
     <div class="controls">
-        <select ng-model="<?= $model ?>">
+        <select ng-model="<?= $model ?>" class="input-medium">
             <?php foreach ($options as $key => $value) { ?>
                 <option value="<?= $value ?>" selected="selected">
                     <?= $key ?>
