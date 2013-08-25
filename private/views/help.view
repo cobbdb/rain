@@ -1,8 +1,0 @@
-<div id="helpMenu">
-    <span>How to use the calculator:</span>
-    <br />
-    Enter an address and click Center Map. Select the corners of
-    your roof and click 'GO'. Click (?) for descriptions and
-    (graph) for more results. Please visit our documentation page on
-    <a href="<?php echo $wiki ?>" target="_blank">Appropedia</a>.
-</div>

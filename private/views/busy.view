@@ -1,7 +1,0 @@
-<div id="busyMenu">
-    <span id="busyTitle">Please Wait</span>
-    <br />
-    <span>Looking up your rainfall info</span>
-    <br />
-    <img src="img/busy_icon.gif" alt="" />
-</div>

@@ -1,0 +1,496 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body{margin:0;padding:0}
+#pebw{height:28px}
+#pageBanner{cursor:default;width:100%;height:28px;background-color:#333;position:absolute;top:0;left:0;text-align:left;overflow:hidden}
+#pageBanner ul{white-space:nowrap;list-style:none;margin:0;padding:0;display:block;margin-left:8px}
+#pageBanner li{cursor:pointer;list-style:none;margin:0;padding:0 9px;position:relative;display:inline-block;font:13px/27px Arial,Helvetica,sans-serif}
+#pageBanner a{text-decoration:none;color:#bbb;font-weight:bold;font-size:13px}
+#pageBanner li:hover a{color:white}
+/*#pebwiki a{color:#7ba}*/
+    </style>
+    <title>Rainwater Collection Calculator - PEquals</title>
+<meta name="description" content="Your one-stop aid for designing commercial and residential rainwater collection systems.">
+<meta name="keywords" content="rainwater,catchment,rain collection,recycle rain,rain storage,monthly rainfall,weather station">
+
+<link rel="icon" href="res/img/logo_icon.png" type="image/png">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="image_src" href="res/img/logo_icon.png" type="image/png">
+<link rel="apple-touch-icon" href="res/img/logo_icon.png" type="image/png">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+<script src="//underscorejs.org/underscore-min.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCdIZENrPra9esL7GQpBU5kIC-mGtQkUWg&amp;sensor=false"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="res/dragscrollable.min.js"></script>
+<script src="res/placeholder.min.js"></script>
+<script src="res/rain.min.js"></script>
+
+<!-- Google Analytics -->
+<script>var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-26042472-1"]);_gaq.push(["_trackPageview"]);(function(){var c=document.createElement("script");c.type="text/javascript";c.async=true;c.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var d=document.getElementsByTagName("script")[0];d.parentNode.insertBefore(c,d)})();</script>
+
+<!-- Google Translate Widget -->
+<meta name="google-translate-customization" content="c78d6550bf27a558-e96b67670c2b8b0f-g99be12627be503c2-14"></meta>
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Geo|Cantora+One" rel="stylesheet">
+<link href="res/rain.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="pebw">
+        <div id="pageBanner">
+            <ul>
+                <li id="pebwiki"><a href="//www.appropedia.org" rel="nofollow">Appropedia</a></li>
+                <li id="pebhome"><a href="/">PEquals</a></li>
+                <li id="pebrain"><a href="/rain">Rain</a></li>
+                <li id="pebappr"><a href="/apprount">Apprount</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="page" class="container" ng-controller="RainController" ng-app>
+    <div class="row">
+    <div id="headerBkg"></div>
+    <div class="span12">
+        <h1 id="header" class="stroke cantora text-center">
+            <a href=".">
+                <span>Rainwater</span>
+                <span>Collection</span>
+                <img src="res/img/logo_icon.png"><span class="geo">Calculator</span>
+            </a>
+        </h1>
+    </div>
+</div>
+    <div class="row">
+        <div id="mapWell" class="span6" ng-controller="MapController">
+            <div class="btn-toolbar text-center row">
+    <div class="btn-group span5">
+        <button type="button" class="btn active" data-title="Map" data-target="#map" ng-click="showSatellite()">
+            <i class="icon-map-marker"></i>
+            Map
+        </button>
+        <button type="button" class="btn" data-title="Rainfall" data-target="#rainGraph" ng-click="showRainfall()">
+            Rainfall
+        </button>
+        <button type="button" class="btn" data-title="Usage" data-target="#usageGraph" ng-click="showUsage()">
+            Usage
+        </button>
+        <button type="button" class="btn" data-title="Tank Levels" data-target="#levelsGraph" ng-click="showLevels()">
+            Tank Levels
+        </button>
+        <button type="button" class="btn" data-title="Downspout" data-target="#spoutGraph" ng-click="showDownspout()">
+            Downspout
+        </button>
+    </div>
+    <button type="button" class="btn pull-right span1" data-toggle="modal" data-target="#optionsMenu">
+        <i class="icon-wrench"></i>
+    </button>
+</div>
+
+<form class="input-append navbar-search" ng-submit="search()">
+    <input class="span2" id="mapSearch" placeholder="Search Map" type="text" required>
+    <button class="btn" type="submit">
+        <i class="icon-search"></i>
+    </button>
+</form>
+
+<div id="map"></div>
+<div id="graph">
+    <p></p>
+</div>
+        </div>
+        <hr class="visible-phone"/>
+        <div id="infoWell" class="span6">
+            <div class="accordion" id="infoAccordion">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <span class="accordion-toggle" data-toggle="collapse" data-target="#collapseRain" data-parent="#infoAccordion">
+                <i class="icon-tint"></i>
+                <span>Rainwater</span>
+                <i class="icon-chevron-down pull-right"></i>
+            </span>
+        </div>
+        <div id="collapseRain" class="accordion-body collapse in">
+            <div class="accordion-inner">
+                <form class="form-horizontal">
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Monthly Rainfall:
+    </label>
+    <div class="controls">
+        <button type="button" class="btn" data-toggle="modal" data-target="#rain-grid">
+            Show Grid        </button>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Annual Rainfall:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" placeholder="No data" class="input-small" value="" disabled>
+            <span class="add-on">cm</span>
+        </div>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Annual Collection:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" placeholder="No data" class="input-small" value="" disabled>
+            <span class="add-on">L</span>
+        </div>
+    </div>
+</div>
+</form>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <span class="accordion-toggle" data-toggle="collapse" data-target="#collapseTank" data-parent="#infoAccordion">
+                <i class="icon-folder-close"></i>
+                <span>Tank</span>
+                <i class="icon-chevron-down pull-right"></i>
+            </span>
+        </div>
+        <div id="collapseTank" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <form class="form-horizontal">
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Storage Distance:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" ng-model="Array" placeholder="No data" class="input-small">
+            <span class="add-on"></span>
+        </div>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Tank Size:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" ng-model="Array" placeholder="No data" class="input-small">
+            <span class="add-on"></span>
+        </div>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Full Tank Weight:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" placeholder="No data" class="input-small" value="" disabled>
+            <span class="add-on">kg</span>
+        </div>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        First Flush Size:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" placeholder="No data" class="input-small" value="" disabled>
+            <span class="add-on">L</span>
+        </div>
+    </div>
+</div>
+</form>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <span class="accordion-toggle" data-toggle="collapse" data-target="#collapseSystem" data-parent="#infoAccordion">
+                <i class="icon-retweet"></i>
+                <span>System</span>
+                <i class="icon-chevron-down pull-right"></i>
+            </span>
+        </div>
+        <div id="collapseSystem" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <form class="form-horizontal">
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Roof Area:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" ng-model="data.monthlyRainfall" placeholder="No data" class="input-small">
+            <span class="add-on">m&sup2;</span>
+        </div>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Roof Material:
+    </label>
+    <div class="controls">
+        <select ng-model="data.efficiency" class="input-medium">
+                            <option value="1" selected="selected">
+                    Perfect                </option>
+                            <option value="0.95" selected="selected">
+                    Tile                </option>
+                            <option value="0.95" selected="selected">
+                    Metal                </option>
+                            <option value="0.95" selected="selected">
+                    Concrete                </option>
+                            <option value="0.95" selected="selected">
+                    Asphalt                </option>
+                            <option value="0.7" selected="selected">
+                    Gravel                </option>
+                            <option value="0.75" selected="selected">
+                    Soil                </option>
+                            <option value="0.17" selected="selected">
+                    Grass                </option>
+                    </select>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        System Efficiency:
+    </label>
+    <div class="controls">
+        <div class="input-append">
+            <input type="text" placeholder="No data" class="input-small" value="{{data.getEfficiency()}}" disabled>
+            <span class="add-on">%</span>
+        </div>
+    </div>
+</div>
+    <div class="control-group">
+    <label class="infoTitle control-label">
+        Monthly Usage:
+    </label>
+    <div class="controls">
+        <button type="button" class="btn" data-toggle="modal" data-target="#use-grid">
+            Show Grid        </button>
+    </div>
+</div>
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    <div id="footer" class="text-center navbar navbar-fixed-bottom">
+    <div ng-repeat="msg in alerts" class="alert alert-error" id="footErr{{ $index }}">
+        <button type="button" class="close" data-dismiss="#footErr{{ $index }}" ng-click="dismiss($event)">&times;</button>
+        <strong>Heads up!</strong>
+        {{ msg }}
+    </div>
+    <div ng-switch on="guideIsVisible">
+        <div id="guide" class="alert alert-info" ng-switch-when="true">
+            <button type="button" class="close" data-dismiss="#guide" ng-click="hideGuide()">&times;</button>
+            <strong>Guide:</strong>
+            The final version will include instructional tips here.
+        </div>
+    </div>
+    <div class="alert">
+        <strong>Warning!</strong>
+        There are health hazards with <a href="{{approUrl}}#Warnings" target="_blank" rel="nofollow">drinking and collecting rainwater</a>.
+    </div>
+</div>
+    <div id="optionsMenu" class="modal hide fade">
+    <div class="modal-header">
+        <h3>Options Menu</h3>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <!-- Guide Control -->
+            <div class="control-group">
+                <label class="control-label">Guide Control</label>
+                <div class="controls">
+                    <div ng-switch on="guideIsVisible">
+                        <button type="button" class="btn" ng-switch-when="true" ng-click="hideGuide()">Hide Guide</button>
+                        <button type="button" class="btn" ng-switch-when="false" ng-click="showGuide()">Show Guide</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Type Control -->
+            <div class="control-group">
+                <label class="control-label">Map Type</label>
+                <div class="controls">
+                    <select ng-model="mapType" ng-selected="changeMapType()" ng-options="option for option in allMapTypes"></select>
+                </div>
+            </div>
+            <!-- Language Control -->
+            <div class="control-group">
+                <label class="control-label">Language</label>
+                <div class="controls">
+                    <!-- Google Translate -->
+                    <div id="google_translate_element"></div><script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")};</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+</div>
+    <div id="use-grid" class="modal hide fade" ng-controller="GridController">
+    <div class="modal-header">
+        <h3>Monthly Water Usage</h3>
+    </div>
+    <div class="modal-body">
+                <form class="input-grid">
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ja</span>
+                                    <input ng-model="primary" class="input-mini" id="use-mo-0" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Fe</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-1" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-1" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ma</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-2" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-2" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ap</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-3" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-3" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">My</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-4" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-4" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ju</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-5" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-5" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Jy</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-6" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-6" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Au</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-7" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-7" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Se</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-8" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-8" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Oc</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-9" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-9" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">No</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-10" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-10" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">De</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="use-mo-11" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="use-mo-11" type="number">
+                            </div>
+                </form>
+    </div>
+    <div class="modal-footer">
+        <span class="pull-left badge">Unit: cm</span>
+        <button class="grid-option btn btn-mini btn-info" data-prefix="use" ng-click="toggle($event)">Autofill {{state()}}</button>
+        <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+</div>
+    <div id="rain-grid" class="modal hide fade" ng-controller="GridController">
+    <div class="modal-header">
+        <h3>Monthly Rainfall</h3>
+    </div>
+    <div class="modal-body">
+                <form class="input-grid">
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ja</span>
+                                    <input ng-model="primary" class="input-mini" id="rain-mo-0" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Fe</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-1" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-1" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ma</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-2" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-2" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ap</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-3" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-3" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">My</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-4" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-4" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Ju</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-5" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-5" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Jy</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-6" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-6" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Au</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-7" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-7" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Se</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-8" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-8" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">Oc</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-9" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-9" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">No</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-10" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-10" type="number">
+                            </div>
+                                <div class="input-prepend" ng-switch on="autofill">
+                <span class="add-on">De</span>
+                                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="rain-mo-11" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="rain-mo-11" type="number">
+                            </div>
+                </form>
+    </div>
+    <div class="modal-footer">
+        <span class="pull-left badge">Unit: cm</span>
+        <button class="grid-option btn btn-mini btn-info" data-prefix="rain" ng-click="toggle($event)">Autofill {{state()}}</button>
+        <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+</div>
+</div>
+</body>
+</html>
