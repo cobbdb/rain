@@ -1,6 +1,10 @@
 $(function () {
-    $('.switch').on('click', function (e) {
-        $(e.target).toggleClass('switch-on switch-off');
+    var buildSelector = _.template('.grid-option[data-prefix="<%= type %>"]');
+    $('.grid-option').on('click', function (e) {
+        var target = buildSelector({
+            type: e.target.getAttribute('data-prefix')
+        });
+        $(target).toggleClass('hidden');
     });
 });
 

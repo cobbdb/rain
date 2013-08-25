@@ -1,0 +1,25 @@
+<div id="<?= $prefix ?>-grid" class="modal hide fade">
+    <div class="modal-header">
+        <h3><?= $title ?></h3>
+    </div>
+    <div class="modal-body">
+        <?php $months = Array(
+            'Ja', 'Fe', 'Ma', 'Ap', 'Ma', 'Ju',
+            'Jy', 'Au', 'Se', 'Oc', 'No', 'De'
+        ) ?>
+        <form class="input-grid">
+        <?php foreach ($months as $i => $month) { ?>
+            <?php $id = "$prefix-mo-$i" ?>
+            <div class="input-prepend">
+                <span class="add-on"><?= $month ?></span>
+                <input class="input-mini" id="<?= $id ?>" type="text">
+            </div>
+        <?php } ?>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="grid-option btn btn-small btn-success" data-prefix="<?= $prefix ?>">Autofill ON</button>
+        <button class="grid-option btn btn-small hidden" data-prefix="<?= $prefix ?>">Autofill Off</button>
+        <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+</div>

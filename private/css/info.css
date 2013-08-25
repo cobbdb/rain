@@ -7,20 +7,6 @@
 .input-grid > div {
     margin-bottom: 3px;
 }
-.switch {
-    width: 66px;
-    height: 26px;
-    border: none;
-}
-.switch:hover {
-    cursor: pointer;
-}
-.switch-on {
-    background: url('img/switch.png') top left;
-}
-.switch-off {
-    background: url('img/switch.png') top right;
-}
-.grid-options {
-    margin-left: 15px;
+.modal form {
+    margin: 0;
 }

@@ -11,6 +11,12 @@
     </div>
     <?= H::render('footer.view') ?>
     <?= H::render('options.view') ?>
-    <?= H::render('grid_rainfall.view') ?>
-    <?= H::render('grid_usage.view') ?>
+    <?= H::render('grid_modal.view', Array(
+        'title' => 'Monthly Water Usage',
+        'prefix' => 'use'
+    )) ?>
+    <?= H::render('grid_modal.view', Array(
+        'title' => 'Monthly Rainfall',
+        'prefix' => 'rain'
+    )) ?>
 </div>

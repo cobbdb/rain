@@ -24,6 +24,6 @@
     <?= H::render('info/modal_entry.view', Array(
         'title' => 'Monthly Usage',
         'data' => 'Show Grid',
-        'target' => '#usage-grid'
+        'target' => '#use-grid'
     )) ?>
 </form>
