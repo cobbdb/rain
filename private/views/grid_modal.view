@@ -23,7 +23,8 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button class="grid-option btn btn-small btn-success" data-prefix="<?= $prefix ?>" ng-click="toggle($event)">Autofill {{state()}}</button>
+        <span class="pull-left label">Unit: cm</span>
+        <button class="grid-option btn btn-small btn-info" data-prefix="<?= $prefix ?>" ng-click="toggle($event)">Autofill {{state()}}</button>
         <button class="btn" data-dismiss="modal">Close</button>
     </div>
 </div>
