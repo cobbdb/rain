@@ -3,6 +3,9 @@
         <?= $title ?>:
     </label>
     <div class="controls">
-        <input type="text" ng-model="<?= $model ?>" value="<?= $value ?>" placeholder="No data">
+        <div class="input-append">
+            <input type="text" ng-model="<?= $model ?>" placeholder="No data" <?= $extra ?> class="input-small">
+            <span class="add-on"><?= $unit ?></span>
+        </div>
     </div>
 </div>

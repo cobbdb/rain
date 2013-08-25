@@ -4,7 +4,7 @@
     </div>
     <div class="modal-body">
         <?php $months = Array(
-            'Ja', 'Fe', 'Ma', 'Ap', 'Ma', 'Ju',
+            'Ja', 'Fe', 'Ma', 'Ap', 'My', 'Ju',
             'Jy', 'Au', 'Se', 'Oc', 'No', 'De'
         ) ?>
         <form class="input-grid">

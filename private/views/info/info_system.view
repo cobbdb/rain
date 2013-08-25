@@ -1,7 +1,8 @@
 <form class="form-horizontal">
     <?= H::render('info/text_entry.view', Array(
         'title' => 'Roof Area',
-        'model' => 'data.monthlyRainfall'
+        'model' => 'data.monthlyRainfall',
+        'unit' => 'm&sup2;'
     )) ?>
     <?= H::render('info/select_entry.view', Array(
         'title' => 'Roof Material',
