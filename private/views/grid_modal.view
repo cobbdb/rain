@@ -1,4 +1,4 @@
-<div id="<?= $prefix ?>-grid" class="modal hide fade">
+<div id="<?= $prefix ?>-grid" class="modal hide fade" ng-controller="GridController">
     <div class="modal-header">
         <h3><?= $title ?></h3>
     </div>
@@ -10,16 +10,20 @@
         <form class="input-grid">
         <?php foreach ($months as $i => $month) { ?>
             <?php $id = "$prefix-mo-$i" ?>
-            <div class="input-prepend">
+            <div class="input-prepend" ng-switch on="autofill">
                 <span class="add-on"><?= $month ?></span>
-                <input class="input-mini" id="<?= $id ?>" type="text">
+                <?php if ($i == 0) { ?>
+                    <input ng-model="primary" class="input-mini" id="<?= $id ?>" type="number">
+                <?php } else { ?>
+                    <input ng-switch-when="true" disabled value="{{primary}}" class="input-mini" id="<?= $id ?>" type="number">
+                    <input ng-switch-when="false" class="input-mini" id="<?= $id ?>" type="number">
+                <?php } ?>
             </div>
         <?php } ?>
         </form>
     </div>
     <div class="modal-footer">
-        <button class="grid-option btn btn-small btn-success" data-prefix="<?= $prefix ?>">Autofill ON</button>
-        <button class="grid-option btn btn-small hidden" data-prefix="<?= $prefix ?>">Autofill Off</button>
+        <button class="grid-option btn btn-small btn-success" data-prefix="<?= $prefix ?>" ng-click="toggle($event)">Autofill {{state()}}</button>
         <button class="btn" data-dismiss="modal">Close</button>
     </div>
 </div>
