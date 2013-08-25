@@ -1,7 +1,8 @@
 <form class="form-horizontal">
-    <?= H::render('info/string_entry.view', Array(
+    <?= H::render('info/modal_entry.view', Array(
         'title' => 'Monthly Rainfall',
-        'data' => '12 in'
+        'data' => 'Show Grid',
+        'target' => '#rain-grid'
     )) ?>
     <?= H::render('info/string_entry.view', Array(
         'title' => 'Annual Rainfall',
