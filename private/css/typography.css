@@ -12,6 +12,9 @@
 .geo {
     font-family: 'Geo';
 }
+.input-grid .badge {
+    font-size: 12pt;
+}
 .input-grid .add-on {
     font-family: "Lucida Console", Monaco, monospace;
 }
