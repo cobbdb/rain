@@ -24,7 +24,7 @@
     </div>
     <div class="modal-footer">
         <span class="pull-left badge">Unit: cm</span>
-        <button class="grid-option btn btn-mini btn-info" data-prefix="<?= $prefix ?>" ng-click="toggle($event)">Autofill {{state()}}</button>
+        <button class="grid-option btn btn-mini btn-info active" data-prefix="<?= $prefix ?>" ng-click="toggle($event)">Autofill {{state()}}</button>
         <button class="btn" data-dismiss="modal">Close</button>
     </div>
 </div>

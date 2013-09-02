@@ -1,23 +1,29 @@
-<div class="btn-toolbar text-center row">
-    <div class="btn-group span5">
-        <button type="button" class="btn active" data-title="Map" data-target="#map" ng-click="showSatellite()">
+<div class="btn-toolbar text-center">
+    <div class="btn-group">
+        <button type="button" id="map-btn" class="btn btn-info active" data-title="Map" data-target="#map" ng-click="showSatellite()">
             <i class="icon-map-marker"></i>
             Map
         </button>
-        <button type="button" class="btn" data-title="Rainfall" data-target="#rainGraph" ng-click="showRainfall()">
-            Rainfall
+        <button type="button" id="graph-btn" class="btn" data-toggle="dropdown">
+            <span id="graph-title">Graphs</span>
+            <span class="caret"></span>
         </button>
-        <button type="button" class="btn" data-title="Usage" data-target="#usageGraph" ng-click="showUsage()">
-            Usage
-        </button>
-        <button type="button" class="btn" data-title="Tank Levels" data-target="#levelsGraph" ng-click="showLevels()">
-            Tank Levels
-        </button>
-        <button type="button" class="btn" data-title="Downspout" data-target="#spoutGraph" ng-click="showDownspout()">
-            Downspout
-        </button>
+        <ul class="dropdown-menu text-left">
+            <li data-target="#rainGraph" ng-click="showRainfall($event)">
+                <a>Rainfall</a>
+            </li>
+            <li data-target="#usageGraph" ng-click="showUsage($event)">
+                <a>Usage</a>
+            </li>
+            <li data-target="#levelsGraph" ng-click="showLevels($event)">
+                <a>Tank Levels</a>
+            </li>
+            <li data-target="#spoutGraph" ng-click="showDownspout($event)">
+                <a>Downspout</a>
+            </li>
+        </ul>
     </div>
-    <button type="button" class="btn pull-right span1" data-toggle="modal" data-target="#optionsMenu">
+    <button type="button" class="btn pull-right" data-toggle="modal" data-target="#optionsMenu">
         <i class="icon-wrench"></i>
     </button>
 </div>

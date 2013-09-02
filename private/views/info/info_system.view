@@ -1,19 +1,4 @@
 <form class="form-horizontal">
-    <?= H::render('info/string_entry.view', Array(
-        'title' => 'System Efficiency',
-        'value' => '{{data.getEfficiency()}}',
-        'unit' => '%'
-    )) ?>
-    <?= H::render('info/modal_entry.view', Array(
-        'title' => 'Monthly Usage',
-        'data' => 'Show Grid',
-        'target' => '#use-grid'
-    )) ?>
-    <?= H::render('info/text_entry.view', Array(
-        'title' => 'Roof Area',
-        'model' => 'data.monthlyRainfall',
-        'unit' => 'm&sup2;'
-    )) ?>
     <?= H::render('info/select_entry.view', Array(
         'title' => 'Roof Material',
         'model' => 'data.efficiency',
@@ -27,5 +12,15 @@
             'Soil' => 0.75,
             'Grass' => 0.17
         )
+    )) ?>
+    <?= H::render('info/string_entry.view', Array(
+        'title' => 'System Efficiency',
+        'value' => '{{data.getEfficiency()}}',
+        'unit' => '%'
+    )) ?>
+    <?= H::render('info/text_entry.view', Array(
+        'title' => 'Roof Area',
+        'model' => 'data.monthlyRainfall',
+        'unit' => 'm&sup2;'
     )) ?>
 </form>

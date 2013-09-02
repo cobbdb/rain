@@ -12,4 +12,9 @@
         'title' => 'Annual Collection',
         'unit' => 'L'
     )) ?>
+    <?= H::render('info/modal_entry.view', Array(
+        'title' => 'Monthly Usage',
+        'data' => 'Show Grid',
+        'target' => '#use-grid'
+    )) ?>
 </form>

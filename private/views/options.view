@@ -19,7 +19,7 @@
             <div class="control-group">
                 <label class="control-label">Map Type</label>
                 <div class="controls">
-                    <select ng-model="mapType" ng-selected="changeMapType()" ng-options="option for option in allMapTypes"></select>
+                    <select class="input-medium" ng-model="mapType" ng-selected="changeMapType()" ng-options="option for option in allMapTypes"></select>
                 </div>
             </div>
             <!-- Language Control -->
@@ -28,6 +28,16 @@
                 <div class="controls">
                     <!-- Google Translate -->
                     <div id="google_translate_element"></div><script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")};</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
+            </div>
+            <!-- Units Control -->
+            <div class="control-group">
+                <label class="control-label">Units</label>
+                <div class="controls">
+                    <div ng-switch on="guideIsVisible">
+                        <button type="button" class="btn" ng-switch-when="true" ng-click="hideGuide()">Hide Guide</button>
+                        <button type="button" class="btn" ng-switch-when="false" ng-click="showGuide()">Show Guide</button>
+                    </div>
                 </div>
             </div>
         </form>

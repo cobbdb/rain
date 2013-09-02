@@ -16,17 +16,6 @@ function MapController($scope) {
             $(window).resize();
         }, 1000);
 
-        // Map options activate when clicked.
-        $('#mapWell .btn-group .btn').click(function (e) {
-            $('#mapWell .btn-group .btn').removeClass('active');
-            $(e.target).addClass('active');
-        });
-
-        // Map options are scrollable.
-        $('#mapWell .btn-group').dragscrollable({
-            dragSelector: 'button'
-        });
-
         // Center map at user's location.
         $.ajax({
             url: '//www.geoplugin.net/json.gp',
@@ -51,15 +40,24 @@ function MapController($scope) {
     });
 
     var displayMap = function () {
-        $('#mapWell .navbar-search').show();
+        $('#mapWell .navbar-search, #map').fadeIn();
         $('#graph').hide();
-        $('#map').fadeIn();
+
+        $('#graph-title').text('Graphs');
+        $('#map-btn').addClass('active btn-info');
+        $('#graph-btn').removeClass('active btn-info');
+        $('#map-btn i').addClass('icon-white');
     };
 
-    var displayGraph = function () {
-        $('#mapWell .navbar-search').hide();
-        $('#map').hide();
+    var displayGraph = function (e) {
+        $('#mapWell .navbar-search, #map').hide();
         $('#graph').fadeIn();
+
+        var title = $(e.target).text();
+        $('#graph-title').text(title);
+        $('#graph-btn').addClass('active btn-info');
+        $('#map-btn').removeClass('active btn-info');
+        $('#map-btn i').removeClass('icon-white');
     };
 
     _($scope).extend({
@@ -67,6 +65,7 @@ function MapController($scope) {
         showRainfall: displayGraph,
         showUsage: displayGraph,
         showDownspout: displayGraph,
+        showLevels: displayGraph,
         search: function () {
             geocoder.geocode({
                 'address': $('#mapSearch').val()

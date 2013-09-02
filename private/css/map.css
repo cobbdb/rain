@@ -1,14 +1,8 @@
 .btn-toolbar {
-    overflow: hidden;
-    margin-top: 0;
-    margin-bottom: 2px;
+    margin: 0 0 2px;
 }
-#mapWell .btn-group {
-    overflow-x: hidden;
-}
-#mapWell .btn-group button {
-    float: none;
-    display: inline-block;
+.dropdown-menu {
+    cursor: pointer;
 }
 #mapWell {
     position: relative;

@@ -14,7 +14,6 @@
 <script src="//underscorejs.org/underscore-min.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCdIZENrPra9esL7GQpBU5kIC-mGtQkUWg&amp;sensor=false"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="res/dragscrollable.min.js"></script>
 <script src="res/placeholder.min.js"></script>
 <script src="res/rain.min.js"></script>
 

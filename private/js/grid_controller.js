@@ -5,7 +5,7 @@ function GridController($scope) {
             return ($scope.autofill) ? 'ON' : 'OFF';
         },
         toggle: function (e) {
-            $(e.target).toggleClass('btn-info');
+            $(e.target).toggleClass('btn-info active');
             $scope.autofill = !$scope.autofill;
         }
     });
