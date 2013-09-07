@@ -1,15 +1,23 @@
 <?php
-
-require_once "./private/station.php";
-require_once "./private/station_factory.php";
-
 /**
  * Rain data API for Apprount.
  */
 
+function __autoload($classname) {
+    $filename = "./private/$classname.php";
+    include_once($filename);
+}
+
 global $in_lat, $in_lng;
 $in_lat = $_REQUEST["lat"];
 $in_lng = $_REQUEST["lng"];
+
+$prcStream = fopen("data/v2.prcp", "r");
+$precipFile = new File($prcStream);
+$metaStream = fopen("data/v2.prcp.inv", "r");
+$metaFile = new File($metaStream);
+
+
 
 // open the data files
 file_init();
@@ -29,24 +37,20 @@ echo $encoded;
 // close the file streams
 file_close();
 
-
 /**
  * Create the JSON object from the nearest station.
  * @returns the encoded JSON object.
  */
-function create_json($s_near) {
-    $json = Array();
-    
-    $json["s_lat"] = $s_near->lat;
-    $json["s_lng"] = $s_near->lng;
-    $json["s_dist"] = $s_near->dist;
-    
-    $json["p_year"] = $s_near->getYearlyMean();
-    
+function create_json($station) {
+    $json = Array(
+        "s_lat" => $station->lat,
+        "s_lng" => $station->lng,
+        "s_dist" => $station->dist,
+        "p_year" => $station->getYearlyMean()
+    );
     for ($i = 0; $i < 12; $i += 1) {
-        $json["p_mo_$i"] = $s_near->getMonthlyMean($i + 1);
+        $json["p_mo_$i"] = $station->getMonthlyMean($i + 1);
     }
-    
     return json_encode($json);
 }
 
@@ -56,31 +60,31 @@ function create_json($s_near) {
  */
 function loadAverages(&$s_near) {
     global $fin_precip;
-    
+
     // advance the file to the station's data
     $line = scanToStation($s_near->station_id);
-    
+
     do {
         // parse the line
         $tok = strtok($line, " -\n");
         $tok = strtok(" -\n"); // skip to first precip value
-        
+
         // average in values for each month
         for ($i = 0; $i < 12; $i += 1) {
             if ($tok == 8888) {
                 // trace rainfall
                 $tok = 0;
             }
-            
+
             if ($tok != 9999) {
                 // no data
                 $s_near->addRainfall($i + 1, $tok);
             }
-            
+
             // next token
             $tok = strtok(" -\n");
         }
-        
+
         // next line of data
         $line = nextDataLine($s_near->station_id);
     } while ($line !== false); // not identical
@@ -93,21 +97,21 @@ function loadAverages(&$s_near) {
  */
 function nextDataLine($s_id) {
     global $fin_precip;
-    
+
     if (feof($fin_precip)) {
         return false; // end of file
     }
-    
+
     $line = fgets($fin_precip);
     $id = strtok($line, " -\n");
-    
+
     // only interested in first 11 digits
     $id = substr($id, 0, 11);
-    
+
     if ($id != $s_id) {
         return false;
     }
-    
+
     return $line;
 }
 
@@ -120,22 +124,22 @@ function nextDataLine($s_id) {
  */
 function scanToStation($s_id) {
     global $fin_precip;
-    
+
     while (!feof($fin_precip)) {
         // next line
         $line = fgets($fin_precip);
         // first token
         $tok = strtok($line, " -\n");
-        
+
         // only interested in first 11 digits
         $tok = substr($tok, 0, 11);
-        
+
         // break at first station line
         if ($tok == $s_id) {
             break;
         }
     }
-    
+
     return $line;
 }
 
@@ -146,19 +150,19 @@ function getNearestStationID() {
     global $fin_meta;
     //global $s_tenths, $s_ones, $s_fives;
     global $in_lat, $in_lng;
-    
+
     // distance from s_near to coords
     $dist = 9999999999; // excessivly large
-    
+
     while (!feof($fin_meta)) {
         // load a line of data
         $s_next = getNextStation();
-        
+
         if (isNearest($dist, $s_next)) {
             $s_near = $s_next;
         }
     }
-    
+
     //echo "Distance is " . round($dist, 2) . "mi<br/>";
     return $s_near;
 }
@@ -170,12 +174,10 @@ function getNearestStationID() {
  */
 function isNearest(&$near_dist, $s_check) {
     $near = false;
-    
     if ($s_check->dist < $near_dist) {
         $near_dist = $s_check->dist;
         $near = true;
     }
-    
     return $near;
 }
 
@@ -195,7 +197,7 @@ function getNextStation() {
  */
 function file_init() {
     global $fin_precip, $fin_meta;
-    
+
     $fin_precip = fopen("data/v2.prcp", 'r');
     $fin_meta = fopen("data/v2.prcp.inv", 'r');
 }
@@ -205,7 +207,7 @@ function file_init() {
  */
 function file_close() {
     global $fin_precip, $fin_meta;
-    
+
     fclose($fin_precip);
     fclose($fin_meta);
 }
