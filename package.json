@@ -14,11 +14,10 @@
   "license": "default",
   "readmeFilename": "README.md",
   "dependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.6.1",
-    "grunt-contrib-jshint": "~0.4.3",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-cli": "~0.1.9",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*"
   }
 }
