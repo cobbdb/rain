@@ -2,17 +2,11 @@
   "name": "rain",
   "version": "2.1.0",
   "description": "Rainwater collection calculator for use in feasibility analysis of residential and commercial rainwater catchment systems.",
-  "main": "index.php",
-  "scripts": {
-    "start": "./node_modules/.bin/grunt deploy"
-  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cobbdb/rain"
+    "url": "https://github.com/cobbdb/rain.git"
   },
   "author": "Dan Cobb",
-  "license": "default",
-  "readmeFilename": "README.md",
   "dependencies": {
     "grunt": "*",
     "grunt-contrib-cssmin": "*",
