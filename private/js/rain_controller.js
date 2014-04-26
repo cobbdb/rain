@@ -12,7 +12,7 @@ function RainController($scope) {
         localStorage.version = version;
     }
 
-    _($scope).extend({
+    $.extend($scope, {
         approUrl: 'http://www.appropedia.org/Rainwater_Collection_Calculator',
         /**
          * Dismiss any element who is designated by data-dismiss attribute.
@@ -76,7 +76,7 @@ function RainController($scope) {
         data: {
             efficiency: 1,
             getEfficiency: function () {
-                var eff = parseFloat($scope.data.efficiency);
+                var eff = parseFloat(this.efficiency);
                 return eff.toPercentage();
             },
             monthlyRainfall: 12
