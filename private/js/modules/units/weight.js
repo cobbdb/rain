@@ -2,8 +2,10 @@ var Unit = require('./unit.js');
 
 /**
  * @param {Object} opts
- * @param {String} opts.state
+ * @param {Object} opts.control
+ * @param {String} opts.control.state
  * @param {Number} opts.value
+ * @param {Number} opts.unit
  * @return {Unit}
  */
 module.exports = function (opts) {

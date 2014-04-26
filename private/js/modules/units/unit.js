@@ -1,7 +1,9 @@
 /**
  * @param {Object} opts
- * @param {String} opts.state
+ * @param {Object} opts.control
+ * @param {String} opts.control.state
  * @param {Number} opts.value
+ * @param {String} opts.unit
  * @param {Array} opts.units
  * @param {String} opts.units.metric
  * @param {String} opts.units.us
@@ -9,15 +11,26 @@
  * @return {Object}
  */
 module.exports = function (opts) {
-    var metric, us, i, unit, len;
+    var i, unit, len, metric, us;
     var init = function (unit_met, unit_us, conversion) {
+        var val_met, val_us;
         if (opts.unit === unit_met) {
-            metric = opts.value;
-            us = opts.value * conversion;
+            val_met = opts.value;
+            val_us = opts.value * conversion;
         } else if (opts.unit === unit_us) {
-            metric = opts.value / conversion;
-            us = opts.value;
+            val_met = opts.value / conversion;
+            val_us = opts.value;
+        } else {
+            return;
         }
+        metric = {
+            val: val_met,
+            unit: unit_met
+        };
+        us = {
+            val: val_us,
+            unit: unit_us
+        };
     };
     len = opts.units.length;
     for (i = 0; i < len; i += 1) {
@@ -26,10 +39,10 @@ module.exports = function (opts) {
     }
 
     return {
-        val: function () {
-            if (opts.state === 'metric') {
+        get: function () {
+            if (opts.control.state === 'metric') {
                 return metric;
-            } else if (opts.state === 'us') {
+            } else if (opts.control.state === 'us') {
                 return us;
             }
             throw Error('Unit state is either metric or us.');
