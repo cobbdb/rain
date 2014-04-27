@@ -7,7 +7,6 @@ Number.prototype.roundToFixed = function (radix) {
     val /= Math.pow(10, radix);
     return val;
 };
-
 Number.prototype.toPercentage = function (radix) {
     var num = this * 100;
     return num.roundToFixed(radix);

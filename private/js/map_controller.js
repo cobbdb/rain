@@ -1,4 +1,4 @@
-function MapController($scope) {
+window.MapController = function ($scope) {
     var resizeTimer;
     var geocoder = new google.maps.Geocoder();
 
@@ -60,7 +60,7 @@ function MapController($scope) {
         $('#map-btn i').removeClass('icon-white');
     };
 
-    _($scope).extend({
+    $.extend($scope, {
         showSatellite: displayMap,
         showRainfall: displayGraph,
         showUsage: displayGraph,
@@ -78,4 +78,4 @@ function MapController($scope) {
             });
         }
     });
-}
+};

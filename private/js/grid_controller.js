@@ -1,5 +1,5 @@
-function GridController($scope) {
-    _($scope).extend({
+window.GridController = function ($scope) {
+    $.extend($scope, {
         autofill: true,
         state: function () {
             return ($scope.autofill) ? 'ON' : 'OFF';
@@ -9,4 +9,4 @@ function GridController($scope) {
             $scope.autofill = !$scope.autofill;
         }
     });
-}
+};

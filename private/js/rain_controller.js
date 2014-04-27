@@ -1,7 +1,7 @@
 /**
  * Global app-level controller.
  */
-function RainController($scope) {
+window.RainController = function ($scope) {
     var version = '2.1.0';
     localStorage.version = localStorage.version || version;
     localStorage.guideIsVisible = localStorage.guideIsVisible || true;
@@ -82,4 +82,4 @@ function RainController($scope) {
             monthlyRainfall: 12
         }
     });
-}
+};
